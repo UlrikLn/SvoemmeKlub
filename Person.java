@@ -26,17 +26,17 @@ public class Person
             if (age < 18)
             {                
                 kontingent = 1000;
-                System.out.println(kontingent);
+                System.out.println(Junior kontingent);
             }
             else if (age >= 17 && age < 60)
             {
               kontingent = 1600;
-              System.out.println(kontingent);
+              System.out.println(Senior kontingent);
             }
             else if (age > 60)
             {
                 kontingent = 1200;
-                System.out.println(kontingent);
+                System.out.println(Pensionist kontingent);
             }
         }
         else if (medlemsskab == false)
