@@ -1,0 +1,55 @@
+public class MemberList {
+
+    ArrayList<Member> MemberList = new ArrayList<Member>();
+      MemberList.add(new Member("diller ", " prut " , -99));
+      MemberList.add(new Member("Magnus Eklund",8 , ));
+      MemberList.add(new Member("Hanne Arvidsson",67  , ));
+      MemberList.add(new Member("Emma Eklund",10 , ));
+      MemberList.add(new Member("Sofia Mattsson",22 , ));
+      MemberList.add(new Member("Liva Jakobsson",13 , ));
+      MemberList.add(new Member("Arthur Lundberg",18 , ));
+      MemberList.add(new Member("Camilla Jørgensen",20 , ));
+      MemberList.add(new Member("Elias Arvidsson",10 , ));
+      MemberList.add(new Member("Kirsten Andersson",78 , ));
+      MemberList.add(new Member("Hugo Søgaard",35 , ));
+      MemberList.add(new Member("Jette Larsson",54 , ));
+      MemberList.add(new Member("Melanie Nørregaard",22 , ));
+      MemberList.add(new Member("Anna Mattsson",8 , ));
+      MemberList.add(new Member("Peter Wikström",45 , ));
+      MemberList.add(new Member("Oscar Nyström",25 , ));
+      MemberList.add(new Member("Sofia Nilsson",12 , ));
+      MemberList.add(new Member("Jan Mørk",54 , ));
+      MemberList.add(new Member("Karla Fransson",12 , ));
+      MemberList.add(new Member("Josefine Henriksson",13 , ));
+      MemberList.add(new Member("Arthur Söderberg",7 , ));
+      MemberList.add(new Member("Anne Pettersson",45 , ));
+      MemberList.add(new Member("Noah Karlsson",13 , ));
+      MemberList.add(new Member("Felix Mohamed",16 , ));
+      MemberList.add(new Member("Gitte Lundqvist",55 , ));
+      MemberList.add(new Member("Thomas Fransson",53 , ));
+      MemberList.add(new Member("Frederik Lindström",32 , ));
+      MemberList.add(new Member("Søren Sandberg",69, ));
+      MemberList.add(new Member("Mette Fransson",49, ));
+      MemberList.add(new Member("Karla Eriksson",31 , ));
+      MemberList.add(new Member("Mette Håkansson",23, ));
+      MemberList.add(new Member("Pernille Johansson",28, ));
+      MemberList.add(new Member("Victoria Arvidsson",25, ));
+      MemberList.add(new Member("Elias Jakobsson",6 , ));
+      MemberList.add(new Member("Sofia Lundin",14 , ));
+      MemberList.add(new Member("Kirsten Henriksson",66 , ));
+      MemberList.add(new Member("Louise Lindqvist",58 , ));
+      MemberList.add(new Member("Victor Löfgren",67 , ));
+      MemberList.add(new Member("Frederik Karlsson",19 , ));
+      MemberList.add(new Member("Torben L. Nørgaard",43 , ));
+      MemberList.add(new Member("Trine O. Poulsen",51 , ));
+      MemberList.add(new Member("Jacob B. Hansen",23 , ));
+      MemberList.add(new Member("Andrea A. Jepsen",28 , ));
+      MemberList.add(new Member("Carl M. Lorenzen",78 , ));
+      MemberList.add(new Member("Nikolaj N. Ravn",34 , ));
+      MemberList.add(new Member("David S. Krogh",42 , ));
+      MemberList.add(new Member("Martin C. Jepsen",48 , ));
+      MemberList.add(new Member("Frederik H. Dam",24 , ));
+      MemberList.add(new Member("Lasse L. Andresen",64 , ));
+      MemberList.add(new Member("Morten A. Hedegaard",76 , ));
+
+    }
