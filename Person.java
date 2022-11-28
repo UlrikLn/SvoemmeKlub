@@ -4,6 +4,7 @@ public class Person
     int age = -99;
     int kontingent = -100;
     boolean medlemsskab;
+    int id = -101;
     
     public Person (String n, int a, boolean m)
     {
@@ -11,6 +12,8 @@ public class Person
       age = a;
       medlemsskab = m;
     }
+    
+    //for (i = 0; i <  )
 
     public int whatMember() 
     {
