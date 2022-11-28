@@ -8,12 +8,12 @@ public class Person
     int id = -99;
     int restance = -9999;
     
-    public Person (String n, int a, boolean m, int id, int r)
+    public Person (int id, String n, int a, boolean m, int r)
     {
+        this.id++;
         name = n;
         age = a;
         medlemsskab = m;
-        this.id++;
         restance = r;
 
 
