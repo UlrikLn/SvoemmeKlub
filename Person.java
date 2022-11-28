@@ -4,12 +4,16 @@ public class Person
     int age = -99;
     int kontingent = -100;
     boolean medlemsskab;
+
+    int restance = -9999;
     
-    public Person (String n, int a, boolean m)
+    public Person (String n, int a, boolean m, int r)
     {
       name = n;
       age = a;
       medlemsskab = m;
+      restance = r;
+
     }
 
     public int whatMember() 
