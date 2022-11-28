@@ -18,12 +18,7 @@ public class Person
 
     }
 
-    public count()
-    {
-        System.out.println("hej");
-    }
-
-
+    
     public int whatMember() 
     {
         if (medlemsskab == true) 
