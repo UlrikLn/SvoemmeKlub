@@ -5,14 +5,17 @@ public class Person
     int kontingent = -100;
     boolean medlemsskab;
 
+    int id = -99;
     int restance = -9999;
     
-    public Person (String n, int a, boolean m, int r)
+    public Person (String n, int a, boolean m, int id, int r)
     {
-      name = n;
-      age = a;
-      medlemsskab = m;
-      restance = r;
+        name = n;
+        age = a;
+        medlemsskab = m;
+        this.id++;
+        restance = r;
+
 
     }
 
