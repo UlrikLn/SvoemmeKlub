@@ -4,13 +4,13 @@ public class Person
     int age = -99;
     boolean medlemsskab;
 
-    public static whatMember(int, age) {
+    public void whatMember() {
         if (medlemsskab == true) {
             if (age < 18)
             {
                 // indsæt medlemsskab ungdomssvømmere 1000kr i arraylist.
             }
-            else if (age >= 18 && <60)
+            else if (age >= 18 && < 60)
             {
                 // indsæt medlemsskab seniorsvømmere 1600kr i arraylist
             }
