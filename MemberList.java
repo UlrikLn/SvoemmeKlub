@@ -10,9 +10,9 @@ public class MemberList {
    {
 
     ArrayList<Person> PersonList = new ArrayList<Person>();
-      PersonList.add(new Person("Magnus Eklund",8 , true));
-      PersonList.add(new Person("Hanne Arvidsson", 67, false));
-      PersonList.add(new Person("Emma Eklund", 10, true));
+      PersonList.add(new Person("Magnus Eklund",8 , true, 0));
+      PersonList.add(new Person("Hanne Arvidsson", 67, false, 200));
+      PersonList.add(new Person("Emma Eklund", 10, true, 300));
       /*PersonList.add(new Person("Sofia Mattsson",22 , ));
       PersonList.add(new Person("Liva Jakobsson",13 , ));
       PersonList.add(new Person("Arthur Lundberg",18 , ));

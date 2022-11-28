@@ -7,18 +7,14 @@ public class Person
     int id = 0;
     int restance = -9999;
 
-    public Person (int id, String n, int a, boolean m, int r)
+    public Person (String n, int a, boolean m, int r)
     {
-        this.id++;
         name = n;
         age = a;
         medlemsskab = m;
         restance = r;
-
-
-    }
-
-    
+     }
+         
     public int whatMember() 
     {
         if (medlemsskab == true) 
@@ -26,24 +22,25 @@ public class Person
             if (age < 18)
             {                
                 kontingent = 1000;
-                System.out.println("Junior medlemsskab (pris: " + kontingent + ")");
+                System.out.println("Junior medlemsskab (pris: " + kontingent + "kr.)");
             }
             else if (age >= 17 && age < 60)
             {
               kontingent = 1600;
-              System.out.println("Senior medlemsskab (pris: " + kontingent + ")");
+              System.out.println("Senior medlemsskab (pris: " + kontingent + "kr.)");
             }
             else if (age > 60)
             {
                 kontingent = 1200;
-                System.out.println("Pensionist medlemsskab (pris: " + kontingent + ")");
+                System.out.println("Pensionist medlemsskab (pris: " + kontingent + "kr.)");
             }
         }
         else if (medlemsskab == false)
         {
             kontingent = 500;
-            System.out.println("Passivt medlemsskab (pris: " + kontingent + ")");
+            System.out.println("Passivt medlemsskab (pris: " + kontingent + "kr.)");
         }
         return kontingent;
     }
+    
 }
