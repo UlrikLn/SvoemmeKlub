@@ -26,23 +26,23 @@ public class Person
             if (age < 18)
             {                
                 kontingent = 1000;
-                System.out.println(Junior kontingent);
+                System.out.println("Junior medlemsskab (pris: " + kontingent + ")");
             }
             else if (age >= 17 && age < 60)
             {
               kontingent = 1600;
-              System.out.println(Senior kontingent);
+              System.out.println("Senior medlemsskab (pris: " + kontingent + ")");
             }
             else if (age > 60)
             {
                 kontingent = 1200;
-                System.out.println(Pensionist kontingent);
+                System.out.println("Pensionist medlemsskab (pris: " + kontingent + ")");
             }
         }
         else if (medlemsskab == false)
         {
             kontingent = 500;
-            System.out.println(kontingent);
+            System.out.println("Passivt medlemsskab (pris: " + kontingent + ")");
         }
         return kontingent;
     }
