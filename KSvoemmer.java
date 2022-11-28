@@ -1,8 +1,11 @@
 class KSvoemmer extends Person
 {
+    String diciplin = "drukner";
 
-    public KSvoemmer(String n, int a, int k, boolean m)
+
+    public KSvoemmer(int id, String n, int a, int r)
     {
-
+        super(id,n, a, r,);
     }
+
 }

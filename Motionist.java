@@ -1,7 +1,7 @@
 class Motionist extends Person
 {
-    public Motionist(String n, int a, int k, boolean m)
+    public Motionist(int id, String n, int a, boolean m,int r,)
     {
-        super(n, a, k, m);
+        super(id, n, a, m, r,);
     }
 }
