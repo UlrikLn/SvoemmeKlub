@@ -14,14 +14,12 @@ public class Person
 
     public int whatMember() 
     {
-        if (medlemsskab == true) {
+        if (medlemsskab == true) 
+        {
             if (age < 18)
-            {
-                // indsæt medlemsskab ungdomssvømmere 1000kr i arraylist.
-                
+            {                
                 kontingent = 1000;
                 System.out.println(kontingent);
-                
             }
             else if (age >= 17 && age < 60)
             {
@@ -36,8 +34,8 @@ public class Person
         }
         else if (medlemsskab == false)
         {
-            return kontingent = 500;
-            //System.out.println("hello");
+            kontingent = 500;
+            System.out.println(kontingent);
         }
         return kontingent;
     }
