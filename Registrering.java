@@ -4,12 +4,7 @@ public class Registrering
 {
    public static void main(String[] args) 
    {
-
       Scanner scan = new Scanner(System.in);
-
-
-
-
 
       ArrayList<Person> Members = new ArrayList<Person>();
       Person person1 = new Person("Ole", 50, true, 0);
