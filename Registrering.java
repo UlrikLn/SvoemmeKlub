@@ -7,14 +7,18 @@ public class Registrering
 
       Scanner scan = new Scanner(System.in);
 
-      int id = -99;
 
-      hasnextInt
+
+
 
       ArrayList<Person> Members = new ArrayList<Person>();
-      Person person1 = new Person("Ole", 50, false, 0);
+      Person person1 = new Person("Ole", 50, true, 0);
       person1.whatMember();
       Members.add(person1);
+
+      int id =scan.nextInt();
+      System.out.print("ID: [" + id);
+      System.out.println(person1.showInfo());
 
    }
 

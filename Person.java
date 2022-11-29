@@ -15,6 +15,11 @@ public class Person
         medlemsskab = m;
         restance = r;
      }
+
+     public String showInfo()
+     {
+         return "] Navn: " + name + ", Alder: " + age;
+     }
          
     public int whatMember()
     {
