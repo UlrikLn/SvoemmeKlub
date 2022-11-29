@@ -16,7 +16,7 @@ public class Person
         restance = r;
      }
          
-    public int whatMember() 
+    public int whatMember()
     {
         if (medlemsskab == true) 
         {
