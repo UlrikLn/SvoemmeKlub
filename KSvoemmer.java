@@ -7,5 +7,4 @@ class KSvoemmer extends Person
     {
         super(n, a, m, r);
     }
-
 }

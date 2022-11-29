@@ -59,7 +59,7 @@ public class MemberList {
       PersonList.add(new Person("Frederik H. Dam",24 , ));
       PersonList.add(new Person("Lasse L. Andresen",64 , ));
       PersonList.add(new Person("Morten A. Hedegaard",76 , ));*/
-      
+
       int x = s.nextInt();
       Person test = PersonList.get(x);
 
