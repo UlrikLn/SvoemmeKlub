@@ -4,6 +4,7 @@ public class Person
     int age = -99;
     int kontingent = -100;
     boolean medlemsskab;
+
     int id = 0;
     int restance = -9999;
 

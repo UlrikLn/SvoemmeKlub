@@ -3,9 +3,9 @@ class KSvoemmer extends Person
     String diciplin = "drukner";
 
 
-    public KSvoemmer(int id, String n, int a, int r)
+    public KSvoemmer(String n, int a, boolean m, int r)
     {
-        super(id,n, a, r,);
+        super(n, a, m, r);
     }
 
 }
