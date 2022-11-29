@@ -9,6 +9,8 @@ public class Registrering
 
       int id = -99;
 
+      hasnextInt
+
       ArrayList<Person> Members = new ArrayList<Person>();
       Person person1 = new Person("Ole", 50, false, 0);
       person1.whatMember();
