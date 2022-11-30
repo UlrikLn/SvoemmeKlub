@@ -1,3 +1,4 @@
+
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -10,3 +11,13 @@ public class Exerciser extends Member
 
 
 }
+
+public class Exerciser extends Member
+{
+
+
+    public Competitor()
+        super()
+
+    }
+
