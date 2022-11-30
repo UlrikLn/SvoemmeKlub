@@ -1,12 +1,12 @@
 import java.text.SimpleDateFormat;
 import java.util.*;
-class Excerciser extends Member
+
+public class Exerciser extends Member
 {
-
-    public Excerciser()
-        super()
-
-
+    public Exerciser(int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)
+    {
+        super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive);
+    }
 
 
 }

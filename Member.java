@@ -11,14 +11,14 @@ public class Member
     // medlemmet kan være 3 forskellige membertypes: Competitor, Excerciser og Passiv
     private String memberType = "Prut";
     // Hvis medlemmets membership status er false, er medlemmet en Passiv memeberType
-    boolean membership = true;
+    boolean membershipActive = true;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
 
     ArrayList<Member> memberList = new ArrayList<>();
 
     // Constructors
-    public Member (int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membership)
+    public Member (int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)
     {
         this.id = id;
         this.gender = gender;
@@ -27,7 +27,7 @@ public class Member
         this.birthday = dateFormat.parse(birthday);
         this.subscription = subscription;
         this.memberType = memberType;
-        this.membership = membership;
+        this.membershipActive = membershipActive;
     }
     // Getters
 
@@ -66,9 +66,9 @@ public class Member
         return memberType;
     }
 
-    public boolean getMembership()
+    public boolean getMembershipActive()
     {
-        return membership;
+        return membershipActive;
     }
 
     // Setters
@@ -95,12 +95,12 @@ public class Member
 
     public void setMembership(boolean membership)
     {
-        this.membership = membership;
+        this.membershipActive = membership;
     }
 
     public String toString()
     {
-        if(membership == true)
+        if(getMembershipActive() == true)
         {
             String subs = "dummy";
             if (getSubscription() == 0)
@@ -118,17 +118,18 @@ public class Member
         }
         else
         {
-            return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Fødeselsdag: " + birthday.getDate() + "-" + birthday.getMonth() + 1 + "/" + birthday.getYear()
-                    + ", Medlemskab: [AKTIV]";
-            if (subscription == 0)
+            String subs = "dummy";
+            if (getSubscription() == 0)
             {
-            return ", Kontingent: [Betalt]";
+                subs = ", Kontingent: [Betalt]";
             }
             else if (subscription > 0)
             {
-            return ", Kontingent: [Ikke Betalt]";
+                subs =  ", Kontingent: [Ikke Betalt]";
             }
+            return "ID: " + id + ", Navn: " + firstName + " " + surname +
+                    ", Fødeselsdag: " + birthday.getDate() + "-" + birthday.getMonth() + 1 + "/" + birthday.getYear()
+                    + ", Medlemskab: [PASSIV]" + subs;
 
 
         }
