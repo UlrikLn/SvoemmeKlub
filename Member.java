@@ -1,12 +1,13 @@
 import java.text.*;
 import java.util.*;
+import java.io.*;
 public class Member
 {
     private int id = -99;
     private String gender = "andet";
     private String firstName = "John";
     private String surname = "Dillermand";
-    private Date birthday;
+    private int birthday = -99;
     private int subscription = -99;
     // medlemmet kan være 3 forskellige membertypes: Competitor, Excerciser og Passiv
     private String memberType = "Prut";
@@ -17,14 +18,19 @@ public class Member
 
     ArrayList<Member> memberList = new ArrayList<>();
 
+    public Member()
+    {
+
+    }
+
     // Constructors
-    public Member (int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
+    public Member (int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
     {
         this.id = id;
         this.gender = gender;
         this.firstName = firstName;
         this.surname = surname;
-        this.birthday = dateFormat.parse(String.valueOf(birthday));
+        this.birthday = birthday;
         this.subscription = subscription;
         this.memberType = memberType;
         this.membershipActive = membershipActive;
@@ -46,17 +52,12 @@ public class Member
         return gender;
     }
 
-    public String getFirstName()
+    public String getFullName()
     {
-        return firstName;
+        return firstName + " " + surname;
     }
 
-    public String getSurname()
-    {
-        return surname;
-    }
-
-    public Date getBirthday()
+    public int getBirthday()
     {
         return birthday;
     }
@@ -98,6 +99,11 @@ public class Member
         this.membershipActive = membership;
     }
 
+    public void setSubscription(int subscription)
+    {
+        this.subscription = subscription;
+    }
+
     public String toString()
     {
         if(getMembershipActive() == true)
@@ -112,8 +118,7 @@ public class Member
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
             return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Fødeselsdag: " + birthday.getDate() + "-" + birthday.getMonth() + 1 + "/" + birthday.getYear()
-                    + ", Medlemskab: [AKTIV]" + subs;
+                    ", Alder: " + birthday + ", Medlemskab: [AKTIV]" + subs;
 
         }
         else
@@ -128,43 +133,50 @@ public class Member
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
             return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Fødeselsdag: " + birthday.getDate() + "-" + birthday.getMonth() + 1 + "/" + birthday.getYear()
-                    + ", Medlemskab: [PASSIV]" + subs;
+                    ", Alder: " + birthday + ", Medlemskab: [PASSIV]" + subs;
 
 
         }
 
     }
-
-
-
-
-    /*public int whatMember()
+    public int whatSubcription()
     {
-        if (membership == true)
+        if (getMembershipActive() == true)
         {
-            if (age < 18)
+            if (getBirthday() < 18)
             {
-                subscription = 1000;
-                System.out.println("Junior medlemsskab (pris: " + subscription + "kr.)");
+                setSubscription(1000);
+                System.out.println("Junior medlemsskab (pris: " + getSubscription() + "kr.)");
             }
-            else if (age >= 17 && age < 60)
+            else if (getBirthday() >= 17 && getBirthday() < 60)
             {
-                subscription = 1600;
-              System.out.println("Senior medlemsskab (pris: " + subscription + "kr.)");
+                setSubscription(1600);
+              System.out.println("Senior medlemsskab (pris: " + getSubscription() + "kr.)");
             }
-            else if (age > 60)
+            else if (getBirthday() > 60)
             {
-                subscription = 1200;
-                System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
+                setSubscription(1200);
+                System.out.println("Pensionist medlemsskab (pris: " + getSubscription() + "kr.)");
             }
         }
-        else if (membership == false)
+        else if (getMembershipActive() == false)
         {
-            subscription = 500;
-            System.out.println("Passivt medlemsskab (pris: " + subscription + "kr.)");
+            setSubscription(500);
+            System.out.println("Passivt medlemsskab (pris: " + getSubscription() + "kr.)");
         }
-        return subscription;
-    }*/
+        return getSubscription();
+    }
+
+    public void sleep()
+    {
+        try
+        {
+            Thread.sleep(1200);
+        }
+        catch (InterruptedException d)
+        {
+            System.out.println("Fejl: " + d);
+        }
+    }
     
 }

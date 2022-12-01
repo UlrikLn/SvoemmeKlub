@@ -1,48 +1,59 @@
+import java.awt.*;
+import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Registrering
 {
    File fMembers = new File("members.txt");
+   Scanner scan = new Scanner(System.in);
+   Desktop desktop = Desktop.getDesktop();
+   boolean sentinel = true;
 
    public void filSkrivning(Member member)
    {
-      try {
+      try
+      {
          PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
          output.append("\n");
          output.append(member.toString());
          output.append("\n");
          output.close();
          System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
-      }
-      catch (IOException e)
+      } catch (IOException e)
       {
          System.out.println("error");
          e.printStackTrace();
       }
-      try
+   }
+   public void openFile()
+   {
+      while (sentinel)
       {
-         System.out.println("Do you want to see the members? Y/N");
-         Scanner scan = new Scanner(System.in);
+         System.out.println("Vil du se medlemslisten? j/n");
          char c = scan.next().charAt(0);
-
-         if (c == Y)
+         if (c == 'j')
          {
-            desktop.open(fMembers);
+            sentinel = false;
+            try
+            {
+               desktop.open(fMembers);
+            }
+            catch (Exception e)
+            {
+               System.out.println("Der opstod en fejl: \n" + e);
+            }
+         }
+         else if (c == 'n')
+         {
+            sentinel = false;
          }
          else
          {
-            break;
+            System.out.println("Ugyldigt input, prøv igen med | j | hvis du vil åbne dokumentet eller | n | hvis du vil fortryde");
          }
 
       }
-      catch (Exception e)
-      {
-         System.out.println("**********************Error**********************");
-         System.out.println("                File doesn't open");
-         System.out.println("*************************************************");
-      }
-
    }
 
    /*public void showMembers() throws FileNotFoundException

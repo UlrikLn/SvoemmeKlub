@@ -1,33 +1,36 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class Coach
 {
 
-        public void tildelTræningsresultaterJunior(Hold hold) {
+        public void assignTrainingResultsJunior(Teams teams)
+        {
             Scanner scan = new Scanner(System.in);
             System.out.print("Svømmerens navn: ");
             String navn = scan.nextLine();
             System.out.print("Svømmerens tid: ");
-            double tid = scan.nextDouble();
-            for (int i = 0; i < hold.getJuniorKonkurrencesvømmere().size(); i++) {
-                if (navn.equals(hold.getJuniorKonkurrencesvømmere().get(i).getFuldeNavn())) {
-                    hold.getJuniorKonkurrencesvømmere().get(i).setTræningsResultat(tid);
+            double time = scan.nextDouble();
+            for (int i = 0; i < teams.getJuniorTeam().size(); i++)
+            {
+                if (navn.equals(teams.getJuniorTeam().get(i).getFullName()))
+                {
+                    teams.getJuniorTeam().get(i).setTrainingResult(time);
                     break;
                 }
             }
         }
 
-        public void tildelTræningsresultaterSenior(Hold hold) {
+        public void assignTrainingResultsSenior(Teams teams)
+        {
             Scanner scan = new Scanner(System.in);
             System.out.print("Svømmerens navn: ");
             String navn = scan.nextLine();
             System.out.print("Svømmerens tid: ");
-            double tid = scan.nextDouble();
-            for (int i = 0; i < hold.getSeniorKonkurrencesvømmere().size(); i++) {
-                if (navn.equals(hold.getSeniorKonkurrencesvømmere().get(i).getFuldeNavn())) {
-                    hold.getSeniorKonkurrencesvømmere().get(i).setTræningsResultat(tid);
+            double time = scan.nextDouble();
+            for (int i = 0; i < teams.getSeniorTeam().size(); i++)
+            {
+                if (navn.equals(teams.getSeniorTeam().get(i).getFullName()))
+                {
+                    teams.getSeniorTeam().get(i).setTrainingResult(time);
                     break;
                 }
             }

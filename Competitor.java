@@ -7,6 +7,8 @@ public class Competitor extends Member
     private double trainingResult;
     SwimmingDisciplines swimmingDisciplines;
 
+    enum SwimmingDisciplines {BUTTERFLY, BRYSTSVOEMNING, RYGCRAWL, CRAWL}
+
     public Competitor(int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
     {
         super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive);
@@ -25,7 +27,7 @@ public class Competitor extends Member
         }
         else if (choice.equals("brystsvømning"))
         {
-            competitor.setSwimmingDisciplines(swimmingDisciplines.BRYSTSVØMNING);
+            competitor.setSwimmingDisciplines(swimmingDisciplines.BRYSTSVOEMNING);
         }
         else if (choice.equals("rygcrawl"))
         {
@@ -37,7 +39,7 @@ public class Competitor extends Member
         }
     }
 
-    public void setTrainingResult(double trainingResultat) {
+    public void setTrainingResult(double trainingResult) {
         this.trainingResult = trainingResult;
     }
 
