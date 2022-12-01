@@ -3,10 +3,26 @@ import java.util.*;
 public class Cashier
 {
     // Liste alle priser (Done)
-    // Se Hvem der er aktive og hvem der er passive
+    // hvem der er passive
     // Hvem der har betal og ikke betalt
-    // Gøre folk passive
+    // Gøre folk passive (Done)
+    private ArrayList<Member> restanceMedlemmer = new ArrayList<>();
     Member member = new Member();
+    public void SubscriptionCheck() {
+        double subscription = 0;
+
+        if (member.getSubscription() > 0)
+        {
+            restanceMedlemmer.add(member);
+            System.out.println("Medlem tilføjet til restance liste");
+        }
+        else
+        {
+            System.out.println("Alle medlemmer har betalt :)");
+        }
+
+    }
+
 
 
     public void subcribtionPrices()
@@ -24,16 +40,6 @@ public class Cashier
 
     }
 
-    public void restance()
-    {
-        for (Person person: persons) {
-
-            if (person.getAge() > 30) {
-
-                result.add(person);
-            }
-        }
-    }
 
     public void editMember()
     {

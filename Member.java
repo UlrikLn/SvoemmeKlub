@@ -37,10 +37,7 @@ public class Member
     }
     // Getters
 
-    public List<Member> getMemberList;
-    {
-        return memberList;
-    }
+
     public int getId()
     {
         return id;
@@ -117,7 +114,7 @@ public class Member
             {
                 subs = ", Kontingent: [Betalt]";
             }
-            else if (subscription > 0)
+            else if (getSubscription() > 0)
             {
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
@@ -132,7 +129,7 @@ public class Member
             {
                 subs = ", Kontingent: [Betalt]";
             }
-            else if (subscription > 0)
+            else if (getSubscription() > 0)
             {
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
