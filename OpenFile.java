@@ -2,10 +2,8 @@ import java.util.*;
 import java.io.*;
 import java.awt.Desktop;
 
-public class ScannerDemo1
+public class OpenFile
 {
-
-
     public static void main(String[] args) throws FileNotFoundException
     {
         boolean sentinel = true;
