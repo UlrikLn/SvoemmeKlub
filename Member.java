@@ -37,6 +37,10 @@ public class Member
     }
     // Getters
 
+    public List<Member> getMemberList
+    {
+        return memberList
+    }
     public int getId()
     {
         return id;

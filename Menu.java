@@ -12,6 +12,9 @@ public class Menu
         Desktop desktop = Desktop.getDesktop();
         File memberFile = new File("members.txt");
 
+
+
+
         while (sentinel)
         {
             System.out.println("Vaelg et tal fra 0-9 for at aabne funktioner:");
