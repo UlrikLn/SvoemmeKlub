@@ -37,9 +37,9 @@ public class Member
     }
     // Getters
 
-    public List<Member> getMemberList
+    public List<Member> getMemberList;
     {
-        return memberList
+        return memberList;
     }
     public int getId()
     {
