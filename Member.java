@@ -18,13 +18,13 @@ public class Member
     ArrayList<Member> memberList = new ArrayList<>();
 
     // Constructors
-    public Member (int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)
+    public Member (int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
     {
         this.id = id;
         this.gender = gender;
         this.firstName = firstName;
         this.surname = surname;
-        this.birthday = dateFormat.parse(birthday);
+        this.birthday = dateFormat.parse(String.valueOf(birthday));
         this.subscription = subscription;
         this.memberType = memberType;
         this.membershipActive = membershipActive;

@@ -13,9 +13,9 @@ public class OpenFile
 
         while (sentinel)
         {
-            System.out.println("Do you want to see the members? y/n");
+            System.out.println("Vil du se medlemslisten? j/n");
             char c = scan.next().charAt(0);
-            if (c == 'y')
+            if (c == 'j')
             {
                 sentinel = false;
 
@@ -25,7 +25,7 @@ public class OpenFile
                 }
                 catch (Exception e)
                 {
-                    System.out.println("Error: " + e);
+                    System.out.println("Der opstod en fejl: " + e);
                 }
             }
             else if (c == 'n')
@@ -35,7 +35,7 @@ public class OpenFile
             }
             else
             {
-                System.out.println("Wrong input, try again please");
+                System.out.println("Ugyldigt input, prøv igen med | j | hvis du vil åbne dokumentet eller | n | hvis du vil fortryde");
             }
 
         }

@@ -1,12 +1,13 @@
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Competitor extends Member
 {
     private double trainingResult;
-    private SwimmingDisciplines swimmingDisciplines;
+    SwimmingDisciplines swimmingDisciplines;
 
-    public Competitor(int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)
+    public Competitor(int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
     {
         super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive);
     }

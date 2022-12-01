@@ -2,25 +2,24 @@ import java.util.*;
 
 public class Cashier
 {
-    Member member;
-
-    public static int CalulateAge(Date member.getBirthday())
+    public static int CalulateAge(Member member)
     {
-        Calendar getBirthday = Calendar.getInstance();
-        getBirthday.setTime(getBirthday);
-        Calendar Today = Calendar.getInstance();
+        Date age = member.getBirthday();
+        Calendar age = Calendar.getInstance();
+        age.setTime(age);
+        Calendar today = Calendar.getInstance();
 
-        int ageDiff = iDag.get(Calendar.YEAR) - fozdato.get(Calendar.YEAR);
+        int ageDiff = today.get(Calendar.YEAR) - age.get(Calendar.YEAR);
 
-        if (iDag.get(Calendar.MONTH) < fozdato.get(Calendar.MONTH)) {
-            aarsForskel--;
+        if (today.get(Calendar.MONTH) < age.get(Calendar.MONTH)) {
+            ageDiff--;
         } else {
-            if (iDag.get(Calendar.MONTH) == fozdato.get(Calendar.MONTH) && iDag.get(Calendar.DAY_OF_MONTH) < fozdato.get(Calendar.DAY_OF_MONTH)) {
-                aarsForskel--;
+            if (today.get(Calendar.MONTH) == age.get(Calendar.MONTH) && today.get(Calendar.DAY_OF_MONTH) < age.get(Calendar.DAY_OF_MONTH)) {
+                ageDiff--;
             }
 
         }
-        return aarsForskel;
+        return ageDiff;
     }
         if (udregnAlder(fozdato) < 18) {
         kontingent = 1000;

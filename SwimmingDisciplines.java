@@ -1,4 +1,4 @@
-public enum SwimmingDisciplines
+public class SwimmingDisciplines
 {
-    BUTTERFLY, BRYSTSVØMNING, RYGCRAWL, CRAWL;
+    enum SwimmingD{BUTTERFLY, BRYSTSVØMNING, RYGCRAWL, CRAWL};
 }
