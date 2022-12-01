@@ -4,7 +4,7 @@ import java.awt.Desktop;
 
 public class OpenFile
 {
-    public static void main(String[] args) throws FileNotFoundException
+    public static void main(String[] args)
     {
         boolean sentinel = true;
         Scanner scan = new Scanner(System.in);
@@ -25,12 +25,11 @@ public class OpenFile
                 }
                 catch (Exception e)
                 {
-                    System.out.println(e);
+                    System.out.println("Error: " + e);
                 }
             }
             else if (c == 'n')
             {
-                System.out.println("");
                 sentinel = false;
                 scan.close();
             }
