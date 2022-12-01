@@ -10,12 +10,3 @@ public class Exerciser extends Member
 
 
 }
-
-public class Exerciser extends Member
-{
-
-
-    public Competitor()
-        super()
-
-}
