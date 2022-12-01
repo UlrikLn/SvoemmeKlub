@@ -51,10 +51,13 @@ public class Menu
                 }
                 else if (tal == 5)
                 {
-                    sentinel = false;
+                    //sentinel = false;
                     try
                     {
                         desktop.open(memberFile);
+                        System.out.println("Dokumentet aabner");
+                        System.out.println("----------------------------------------------------------");
+                        member.sleep();
                     }
                     catch (Exception e)
                     {
