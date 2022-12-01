@@ -9,7 +9,7 @@ public class Competitor extends Member
 
     enum SwimmingDisciplines {BUTTERFLY, BRYSTSVOEMNING, RYGCRAWL, CRAWL}
 
-    public Competitor(int id, String gender, String firstName, String surname, Date birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
+    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
     {
         super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive);
     }
