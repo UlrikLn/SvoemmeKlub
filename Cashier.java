@@ -8,7 +8,7 @@ public class Cashier
     // Gøre folk passive
     Member member = new Member();
 
-    member.getMemberList(int getAge);
+
     public void subcribtionPrices()
     {
         System.out.println("Kontingent priser");
