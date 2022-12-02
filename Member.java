@@ -14,6 +14,8 @@ public class Member
     // Hvis medlemmets membership status er false, er medlemmet en Passiv memeberType
     boolean membershipActive = true;
 
+    private int debt = 0;
+
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
 
 
@@ -24,7 +26,7 @@ public class Member
     }
 
     // Constructors
-    public Member (int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
+    public Member (int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive, int debt)
     {
         this.id = id;
         this.gender = gender;
@@ -34,7 +36,11 @@ public class Member
         this.subscription = subscription;
         this.memberType = memberType;
         this.membershipActive = membershipActive;
+        this.debt = debt;
     }
+
+
+
     // Getters
 
     public int getId()
@@ -72,6 +78,11 @@ public class Member
         return membershipActive;
     }
 
+    public int getDebt()
+    {
+        return debt;
+    }
+
     // Setters
 
     public void setId(int id)
@@ -102,6 +113,11 @@ public class Member
     public void setSubscription(int subscription)
     {
         this.subscription = subscription;
+    }
+
+    public void setDebt(int debt)
+    {
+        this.debt = debt;
     }
 
     public String toString()

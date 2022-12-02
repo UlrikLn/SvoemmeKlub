@@ -2,16 +2,22 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+public enum SwimmingDisciplines
+{
+    BUTTERFLY, BRYSTSVOEMNING, RYGCRAWL, CRAWL
+}
+
 public class Competitor extends Member
 {
     private double trainingResult;
     SwimmingDisciplines swimmingDisciplines;
 
-    enum SwimmingDisciplines {BUTTERFLY, BRYSTSVOEMNING, RYGCRAWL, CRAWL}
-
-    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive)throws ParseException
+    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive,int debt, double trainingResult, SwimmingDisciplines swimmingDisciplines)
     {
         super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive);
+        this.trainingResult = trainingResult;
+        this.swimmingDisciplines = swimmingDisciplines;
+
     }
 
     // Tildel svømmediscipliner til en competitor
@@ -38,6 +44,31 @@ public class Competitor extends Member
             competitor.setSwimmingDisciplines(swimmingDisciplines.CRAWL);
         }
     }
+    /*
+    public void tellItLikeItIs() {
+        switch (swimmingDisciplines) {
+            case BUTTERFLY:
+                System.out.println("Du har valgt at ");
+                break;
+
+            case BRYSTSVOEMNING:
+                System.out.println("Fridays are better.");
+                break;
+
+            case RYGCRAWL:
+                System.out.println("Fridays are better.");
+                break;
+
+            case CRAWL:
+                System.out.println("Fridays are better.");
+                break;
+
+            default:
+                System.out.println("Du kan ikke vælge den discpiplin");
+                break;
+        }
+    }
+     */
 
     public void setTrainingResult(double trainingResult) {
         this.trainingResult = trainingResult;
