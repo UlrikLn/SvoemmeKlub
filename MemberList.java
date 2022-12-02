@@ -4,20 +4,25 @@ import java.util.*;
 public class MemberList {
 
    Scanner s = new Scanner(System.in);
+
+   Member member;
+
+
+
    boolean sentinel = true;
    
-   public Person list()
+   public  list()
    {
 
 
       int x = s.nextInt();
-      Person test = PersonList.get(x);
+      Member test = memberList.get(x);
 
           while (sentinel)
         {
             if (s.hasNextInt())
             {
-                Person hello = PersonList.get(x);
+                Member hello = PersonList.get(x);
                 sentinel = false;
             }
             else if (s.hasNext())
