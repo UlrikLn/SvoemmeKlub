@@ -10,6 +10,9 @@ public class Registrering
    Desktop desktop = Desktop.getDesktop();
    boolean sentinel = true;
 
+
+
+
    public void filSkrivning(Member member)
    {
       try

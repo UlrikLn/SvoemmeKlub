@@ -16,7 +16,7 @@ public class Member
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
 
-    ArrayList<Member> memberList = new ArrayList<>();
+
 
     public Member()
     {
@@ -36,7 +36,6 @@ public class Member
         this.membershipActive = membershipActive;
     }
     // Getters
-
 
     public int getId()
     {
@@ -179,5 +178,7 @@ public class Member
             System.out.println("Fejl: " + d);
         }
     }
+
+
     
 }

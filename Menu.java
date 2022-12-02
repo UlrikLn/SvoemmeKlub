@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.awt.Desktop;
@@ -12,7 +13,9 @@ public class Menu
         Desktop desktop = Desktop.getDesktop();
         File memberFile = new File("members.txt");
 
+        ArrayList<Member> memberList = new ArrayList<>();
 
+        memberList.add(Member(298,"Mand","Ulrik","Lehun","22",1600,"prut",true));
 
 
         while (sentinel)
