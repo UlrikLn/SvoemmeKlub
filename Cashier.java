@@ -119,6 +119,7 @@ public class Cashier
 
     public void seeDeficit()
     {
+        // for (Member i: debtList) - samme måde at skrive det på.
         for (int i = 0; i < debtList.size(); i++)
         {
             System.out.println(debtList.get(i));
