@@ -38,9 +38,6 @@ public class Menu
 
 
 
-
-
-
         while (sentinel)
         {
             System.out.println("Vaelg et tal fra 0-9 for at abne funktioner:");
