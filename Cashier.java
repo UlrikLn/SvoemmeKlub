@@ -6,104 +6,104 @@ public class Cashier
     // hvem der er passive ()
     // Hvem der har betal og ikke betalt ()
     // Gøre folk passive (Done)
+    // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
     private ArrayList<Member> debtList = new ArrayList<>();
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
+    Menu menu = new Menu();
 
-    while (sentinel)
+    public void cashierMenu()
     {
-        System.out.println("Vaelg et tal fra 0-9 for at aabne funktioner:");
-        System.out.println("----------------------------------------------------------");
-        System.out.println("| 1 | Opret nyt medlem");
-        System.out.println("| 2 | Slet medlem");
-        System.out.println("| 3 | Rediger medlem");
-        System.out.println("| 4 | Print alle medlemmer i programmet");
-        System.out.println("| 5 | Vis alle medlemmer i databasen");
-        System.out.println("| 6 | Login som kasserer");
-        System.out.println("| 7 | Login som coach");
-        System.out.println("| 0 | Afslut program");
-        System.out.println("----------------------------------------------------------");
-
-        try
+        while ( sentinel )
         {
-            int tal = scan.nextInt();
-            if (tal == 1)
+            System.out.println("Vaelg et tal fra 0-9 for at aabne funktioner:");
+            System.out.println("----------------------------------------------------------");
+            System.out.println("| 1 | Se Kontigent Priser");
+            System.out.println("| 2 | Tilfoej Medlemmer til Restance");
+            System.out.println("| 3 | Se Medlemmer i Restance");
+            System.out.println("| 4 | Slet Medlem");
+            System.out.println("| 0 | Gå Tilbage");
+            System.out.println("----------------------------------------------------------");
+
+            try
             {
-                sentinel = false;
-                System.out.println("Aabner 1");
-            }
-            else if (tal == 2)
-            {
-                sentinel = false;
-                System.out.println("Aabner 2");
-            }
-            else if (tal == 3)
-            {
-                sentinel = false;
-                System.out.println("Aabner 3");
-            }
-            else if (tal == 4)
-            {
-                sentinel = false;
-                System.out.println("Aabner 4");
-            }
-            else if (tal == 5)
-            {
-                //sentinel = false;
-                try
+                int tal = scan.nextInt();
+                if ( tal == 1 )
                 {
-                    desktop.open(memberFile);
-                    System.out.println("Dokumentet aabner");
-                    System.out.println("----------------------------------------------------------");
+                        System.out.println("Printer Kontigent Priser....");
+                        member.sleep();
+                        member.sleep();
+                        subcribtionPrices();
+                }
+                else if ( tal == 2 )
+                {
+                        deficitCheck();
+                }
+                 else if ( tal == 3 )
+                {
+                        System.out.println("Printer Restance Liste....");
+                        member.sleep();
+                        member.sleep();
+                        seeDeficit();
+                }
+                else if ( tal == 4 )
+                {
+                    deleteMember();
+
+                }
+                else if ( tal == 0 )
+                {
+                    sentinel = false;
+                    System.out.println("Lukker programmet");
+                }
+                else
+                {
+                    System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
                     member.sleep();
                 }
-                catch (Exception e)
-                {
-                    System.out.println("**********************Error**********************");
-                    System.out.println("                File doesn't open");
-                    System.out.println("*************************************************");
-                }
             }
-            else if (tal == 6)
-            {
-                sentinel = false;
-                System.out.println("Aabner kasserer");
-            }
-            else if (tal == 7)
-            {
-                sentinel = false;
-                System.out.println("Aabner træner");
-            }
-            else if (tal == 0)
-            {
-                sentinel = false;
-                System.out.println("Lukker programmet");
-            }
-            else
+            catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
                 member.sleep();
+                scan.next();
             }
-        }
-        catch(Exception e)
-        {
-            System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-            member.sleep();
-            scan.next();
-        }
 
+
+        }
     }
+
     public void deficitCheck()
     {
-        if (member.getSubscription() > 0)
+        if (member.getDebt() < 0)
         {
             debtList.add(member);
             System.out.println("Medlem tilføjet til restance liste");
         }
         else
         {
-            System.out.println("Alle medlemmer har betalt :)");
+            System.out.println("Alle medlemmer har betalt, derfor ingen tilføjet)");
+        }
+    }
+// Ikke done
+    public void editDebt()
+    {
+        int input = scan.nextInt();
+
+        member.setDebt(input);
+    }
+
+    public void debtListRemove()
+    {
+        if (member.getDebt() >= 0)
+        {
+            debtList.remove(member);
+            System.out.println("Medlem fjernet fra restance liste");
+        }
+        else
+        {
+            System.out.println("Medlem har stadigvaek en indestaeende gaeld, derfor ikke fjernet");
         }
     }
 
@@ -119,17 +119,38 @@ public class Cashier
 
     public void seeDeficit()
     {
-        // for (Member i: debtList) - samme måde at skrive det på.
-        for (int i = 0; i < debtList.size(); i++)
+        for ( Member value : debtList )
         {
-            System.out.println(debtList.get(i));
+            System.out.println(value);
         }
     }
 
 
-    public void editMember()
+    public void deleteMember()
     {
+        sentinel = true;
 
+        while(sentinel)
+        {
+            try
+            {
+                System.out.println("Indtast Telefonnummer på medlemmet");
+                int prut = scan.nextInt();
+                int id2 = member.getId();
+                // Måske stort M med member??
+                menu.memberList.removeIf(member -> (id2 == prut));
+                debtList.removeIf(member -> (id2 == prut));
+                // == virker fordi man sammenlinger 2x int.
+                System.out.println("Medlem Slettes");
+                sentinel = false;
+            }
+            catch (Exception e)
+            {
+                System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
+                member.sleep();
+                scan.next();
+            }
+        }
     }
 
 }

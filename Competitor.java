@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public enum SwimmingDisciplines
+enum SwimmingDisciplines
 {
     BUTTERFLY, BRYSTSVOEMNING, RYGCRAWL, CRAWL
 }
@@ -14,7 +14,7 @@ public class Competitor extends Member
 
     public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive,int debt, double trainingResult, SwimmingDisciplines swimmingDisciplines)
     {
-        super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive);
+        super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
         this.swimmingDisciplines = swimmingDisciplines;
 

@@ -6,15 +6,23 @@ import java.awt.Desktop;
 
 public class Menu
 {
+    public static ArrayList<Member> memberList = new ArrayList<>();
+
+    // Vi skal lave en ny Class der hedder Delfinen hvor vores main() skal være
+    // så vi laver en metode herinde, der bare hedder start() som så kører vore "menu" while loop.
+    // og så inde i vores main() der kalder laver vi en Menu menu = new Menu og kalder menu.start().
+
     public static void main(String[] args)
     {
+        Cashier cashier = new Cashier();
+        Coach coach = new Coach();
         Scanner scan = new Scanner(System.in);
         Member member = new Member();
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
         File memberFile = new File("members.txt");
 
-        ArrayList<Member> memberList = new ArrayList<>();
+
 
         memberList.add(new Member(26188398,"Mand",  "Ulrik","Lehun",22,1600,"Competitor",true,0));
         memberList.add(new Member(61474346,"Mand",  "Jacob","Gram",23,1600,"Competitor",true,0));
@@ -35,7 +43,7 @@ public class Menu
 
         while (sentinel)
         {
-            System.out.println("Vaelg et tal fra 0-9 for at aabne funktioner:");
+            System.out.println("Vaelg et tal fra 0-9 for at abne funktioner:");
             System.out.println("----------------------------------------------------------");
             System.out.println("| 1 | Opret nyt medlem");
             System.out.println("| 2 | Slet medlem");
@@ -91,11 +99,13 @@ public class Menu
                 {
                     sentinel = false;
                     System.out.println("Aabner kasserer");
+                    cashier.cashierMenu();
                 }
                 else if (tal == 7)
                 {
                     sentinel = false;
                     System.out.println("Aabner træner");
+                    coach.coachMenu();
                 }
                 else if (tal == 0)
                 {
@@ -117,4 +127,7 @@ public class Menu
 
         }
     }
+
+
+
 }
