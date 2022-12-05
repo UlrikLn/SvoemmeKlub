@@ -48,19 +48,19 @@ public class Competitor extends Member
     public void tellItLikeItIs() {
         switch (swimmingDisciplines) {
             case BUTTERFLY:
-                System.out.println("Du har valgt at ");
+                System.out.println("Du har valgt butterfly som discpiplin.");
                 break;
 
             case BRYSTSVOEMNING:
-                System.out.println("Fridays are better.");
+                System.out.println("Du har valgt brystsvoemning som discpiplin.");
                 break;
 
             case RYGCRAWL:
-                System.out.println("Fridays are better.");
+                System.out.println("Du har valgt rygcrawl som discpiplin.");
                 break;
 
             case CRAWL:
-                System.out.println("Fridays are better.");
+                System.out.println("Du har valgt crawl som discpiplin.");
                 break;
 
             default:
