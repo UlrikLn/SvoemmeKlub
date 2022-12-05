@@ -27,16 +27,21 @@ try(FileWriter fw = new FileWriter("members.txt", true);
    {
       try
       {
-         PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
-         output.append("\n");
+         //PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
+         FileWriter fw = new FileWriter("members.txt", true);
+         BufferedWriter bw = new BufferedWriter(fw);
+         PrintWriter out = new PrintWriter(bw);
+
+         out.append(member.toString());
+
+         /*output.append("\n");
          output.append(member.toString());
          output.append("\n");
-         output.close();
+         output.close();*/
          System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
       } catch (IOException e)
       {
-         System.out.println("error");
-         e.printStackTrace();
+         System.out.println("error: " + e);
       }
    }
    public void openFile()
