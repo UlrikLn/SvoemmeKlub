@@ -19,14 +19,14 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     {
         while ( sentinel )
         {
-            System.out.println("Vaelg et tal fra 0-9 for at aabne funktioner:");
+            System.out.println("Vælg et tal fra 0-9 for at å4bne funktioner:");
             System.out.println("----------------------------------------------------------");
             System.out.println("| 1 | Indtast Resultater Junior");
             System.out.println("| 2 | Indtast Resultater Senior");
             System.out.println("| 3 | Se Top 5 Junior");
             System.out.println("| 4 | Se Top 5 Senior");
-            System.out.println("| 5 | Se Traenings Tider Junior");
-            System.out.println("| 6 | Se Traenings Tider Senior");
+            System.out.println("| 5 | Se Trænings Tider Junior");
+            System.out.println("| 6 | Se Trænings Tider Senior");
             System.out.println("| 7 | Se Konkurrence Tider Junior");
             System.out.println("| 8 | Se Konkurrence Tider Senior");
             System.out.println("| 0 | Gå Tilbage");

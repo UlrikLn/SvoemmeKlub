@@ -2,3 +2,7 @@
 ID: -99, Navn: John Dillermand, Alder: -99, Medlemskab: [AKTIV]dummy
 
 ID: -99, Navn: John Dillermand, Alder: -99, Medlemskab: [AKTIV]dummy
+
+ID: -99, Navn: John Dillermand, Køn: andet, Alder: -99, Medlemskab: [Aktiv], Kontingent: -99, , Kontingent: [Betalt]
+
+ID: -99, Navn: John Dillermand, Køn: andet, Alder: -99, Medlemskab: [Aktiv], Kontingent: -99, , Kontingent: [Betalt]

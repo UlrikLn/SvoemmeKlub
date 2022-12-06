@@ -14,7 +14,7 @@ public class Registration
    Teams team = new Teams();
    Coach coach = new Coach();
 
-   public void registerMember()
+   public void registerMember() throws Exception
    {
 
       System.out.println("Opret det nye medlem herunder: ");
@@ -44,7 +44,7 @@ public class Registration
          String firstName = scan.nextLine();
          System.out.print("Efternavn: ");
          String surname = scan.nextLine();
-         System.out.println("Køn ");
+         System.out.print("Køn ");
          String gender = scan.nextLine();
          System.out.print("Alder: ");
          int age = scan.nextInt();
@@ -72,6 +72,7 @@ public class Registration
             subscription = 1200;
             System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
          }
+         fileWrite();
          System.out.println();
 
 
@@ -96,8 +97,7 @@ public class Registration
          int debt = 0;
          int subscription = 0;
          double trainingResult = 0;
-         System.out.println("Hvilken disciplin: [CRAWL] [RYGCRAWL] [BUTTERFLY] [BRYSTSVØMNING]");
-         String swimmingDisciplines = scan.next();
+         String swimmingDisciplines = Teams.selectDiscipline();
 
          Competitor competitor = new Competitor(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt, trainingResult, swimmingDisciplines);
          if (age < 18)
@@ -130,22 +130,23 @@ public class Registration
 
    }
 
-   public void fileWrite(Member member)throws Exception
+   public void fileWrite()throws Exception
    {
       try
       {
 
-         /*FileWriter fw = new FileWriter("members.txt", true);
+         FileWriter fw = new FileWriter("members.txt", true);
          BufferedWriter bw = new BufferedWriter(fw);
          PrintWriter out = new PrintWriter(bw);
-         out.append(member.toString());*/
+         out.append(member.toString());
+         System.out.println("Person er arkiveret i databasen");
 
-         PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
+         /*PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
          output.append("\n");
          output.append(member.toString());
          output.append("\n");
          output.close();
-         System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
+         System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");*/
       } catch (IOException e)
       {
          System.out.println("error: " + e);
@@ -167,11 +168,12 @@ public class Registration
       memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02,"Crawl"));
    }
 
-   public void seeList()
+   public void seeList() throws Exception
    {
       for ( Member value : memberList )
       {
          System.out.println(value);
+
       }
    }
 }
@@ -223,3 +225,78 @@ public void openFile() -- dette har vi sat ind i mindre stil i menuen.
    private ArrayList<Member> members = new ArrayList<>();
    private fileScanner = new filHåndtering
    */
+
+
+
+
+/*
+* else if (menu == 2)
+      {
+         PrintStream writeFileAktive = new PrintStream(new FileOutputStream("AktiveBestillinger.txt",true));
+// PrintStream giver os en class som gør at vi kan printe info.
+// FileOutPutStream vælger vi at printe til en fil og arbejder sammen med PrintStream (navn på String/fil, boolean append).
+// Begge er subclasses til class OutputStream.
+         Pizza p = l.list();
+// l kommer fra PizzaList class, list er metoden. Her laver vi en ny variabel ud fra instanten vi lavede højere oppe.
+         LocalTime lt = u.tid();
+// u kommer fra class LokalTid og tid er metoden.
+         writeFileAktive.printf("%.5s",lt);
+// printf() er er en metode som formaterer det som man skriver. Det starter altid med % og så kommandoen/teksten.
+// "%.5s" betyder at man kun tager de 5 første tegn i vores string. lt bruger vores metode.
+         writeFileAktive.println(" " + p);
+// p kommer fra l.list()
+         try {
+               FileReader fr = new FileReader(fAktiv);
+// FileReader åbner filen og indlæser den i vores software.
+               BufferedReader br = new BufferedReader(fr);
+// Buffer er en måde at gemme info kortvarigt i hukommelsen i stedet for harddisken, så det går meget hurtigere.
+// Læser informationen på den fil som FileReader åbner.
+
+               List<String> list=new ArrayList<String>();
+// Her laver vi en ny arraylist.
+               String string;
+// Her laver vi en ny String variabel.
+               while((string = br.readLine()) != null)
+// Så længe BufferedReader har en linje med String at læse så fortsætter loopet.
+               {
+                  list.add(string);
+// Her tilføjer vi den linje vi læser i bufferedreader til vores arrayList.
+               }
+               br.close();
+// Her lukker vi bufferedReader, så den ikke konstant kører i baggrunden. Så frigiver vi hukommelse til systemet.
+               Collections.sort(list);
+// Her sorterer vi listen.
+              FileWriter fileSort = new FileWriter(fAktiv);
+// Herefter vil vi gerne skrive til filen.
+               BufferedWriter bufferSort = new BufferedWriter(fileSort);
+// Buffered writer fungerer kun i kombination med fileWriter.
+               for(String s: list)
+// En anden måde at skrive (int s = 0; s < list.size(); s++) {bufferSort.write(list.get(s))}
+// https://beginnersbook.com/2013/12/how-to-loop-arraylist-in-java/
+               {
+                  bufferSort.write(s);
+                  bufferSort.write("\n");
+// Her skriver vi så en linje ad gangen efterfulgt af en næste linje indtil loopet er færdigt.
+               }
+               bufferSort.close();
+               System.out.println("\n Filen er sorteret");
+// Så lukker vi bufferSort så den ikke fylder i hukommelsen og ellers vil loopet ikke køre og informationen vil forsvinde.
+
+           }
+           catch (Exception e)
+           {
+               System.out.print("Der var en fejl med sorteringen \n");
+               System.out.println(e);
+           }
+         bw.newLine();
+ // Laver en ny linje så der ikke skrives på samme linje.
+         System.out.println();
+         System.out.println("*************************************************");
+         System.out.println("               Bestilling modtaget! ");
+         System.out.println("*************************************************");
+         System.out.println();
+         writeFileAktive.close();
+
+      }
+
+* */

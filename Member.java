@@ -124,31 +124,31 @@ public class Member
         if(getMembershipActive() == true)
         {
             String subs = "dummy";
-            if (getSubscription() == 0)
+            if (getDebt() == 0)
             {
                 subs = ", Kontingent: [Betalt]";
             }
-            else if (getSubscription() > 0)
+            else if (getDebt() > 0)
             {
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
-            return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Alder: " + age + ", Medlemskab: [AKTIV]" + subs;
+            return "ID: " + id + ", Navn: " + firstName + " " + surname + ", Køn: " + gender +
+                    ", Alder: " + age + ", Medlemskab: [Aktiv]" + ", Kontingent: " + subscription + ", " + subs;
 
         }
         else
         {
             String subs = "dummy";
-            if (getSubscription() == 0)
+            if (getDebt() == 0)
             {
                 subs = ", Kontingent: [Betalt]";
             }
-            else if (getSubscription() > 0)
+            else if (getDebt() > 0)
             {
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
-            return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Alder: " + age + ", Medlemskab: [PASSIV]" + subs;
+            return "ID: " + id + ", Navn: " + firstName + " " + surname + ", Køn: " + gender +
+                    ", Alder: " + age + ", Medlemskab: [Passiv]" + ", Kontingent: " + subscription + ", " + subs;
 
 
         }

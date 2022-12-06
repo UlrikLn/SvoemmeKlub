@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Cashier
 {
@@ -103,14 +104,13 @@ public class Cashier
 
     public void debtListRemove()
     {
-        if (member.getDebt() >= 0)
+        for ( Member member1 : debtList )
         {
-            debtList.remove(member);
-            System.out.println("Medlem fjernet fra restance liste");
-        }
-        else
-        {
-            System.out.println("Medlem har stadigvaek en indestaeende gaeld, derfor ikke fjernet");
+            if (member1.getDebt() <= 0)
+            {
+                debtList.remove(member1);
+                System.out.println("Medlem fjernet fra restance liste");
+            }
         }
     }
 
@@ -126,15 +126,43 @@ public class Cashier
 
     public void seeDeficit()
     {
-        for ( Member value : debtList )
+        for ( Member member1 : debtList )
         {
-            System.out.println(value);
+            System.out.println(member1);
         }
     }
 
 
     public void deleteMember()
     {
+        try
+        {
+            System.out.println("Indtast medlems id: ");
+            int choice = scan.nextInt();
+
+            for ( Member member2 : registration.memberList )
+            {
+                if ( member2.getId() == choice )
+                {
+                    registration.memberList.remove(member2);
+                }
+            }
+            for ( Member member3 : debtList )
+            {
+                if ( member3.getId() == choice )
+                {
+                    debtList.remove(member3);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Ugyldigt input, prov igen med et nummer");
+            member.sleep();
+            scan.next();
+        }
+
+        /*
         sentinel = true;
 
         while(sentinel)
@@ -147,7 +175,11 @@ public class Cashier
                 // Måske stort M med member??
                 registration.memberList.removeIf(member -> (id2 == prut));
                 debtList.removeIf(member -> (id2 == prut));
-                // == virker fordi man sammenlinger 2x int.
+
+
+                Predicate<Member> pr = (Member age) ->(age.getAge() = prut);
+                registration.memberList.removeIf(pr);
+                virker fordi man sammenlinger 2x int.
                 System.out.println("Medlem Slettes");
                 sentinel = false;
             }
@@ -158,6 +190,8 @@ public class Cashier
                 scan.next();
             }
         }
+        */
+
     }
 
 }

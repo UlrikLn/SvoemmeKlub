@@ -40,8 +40,23 @@ public class Competitor extends Member
         return swimmingDisciplines;
     }
 
+    // Override
+    public String toString()
+    {
+        if(getMembershipActive() == true)
+        {
+            String subs = "dummy";
+            if ( getSubscription() == 0 )
+            {
+                subs = ", Kontingent: [Betalt]";
+            } else if ( getSubscription() > 0 )
+            {
+                subs = ", Kontingent: [Ikke Betalt]";
+            }
+        }
+        return "ID: " + getId() + ", Navn: " + getFullName() + ", Køn: " + getGender() +
+                ", Alder: " + getAge() +  ", Medlemskab: [Aktiv]" + ", Kontingent: " + getSubscription() + ", Disciplin: " + swimmingDisciplines;
+    }
 
-
-    // Måske lave en toSring
 
 }

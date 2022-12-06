@@ -57,9 +57,9 @@ public class Menu
                 else if (tal == 4)
                 {
                     System.out.println("Printer Liste....");
-                    member.sleep();
-                    member.sleep();
                     registration.seeList();
+                    member.sleep();
+                    member.sleep();
                 }
                 else if (tal == 5)
                 {
