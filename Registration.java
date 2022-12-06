@@ -2,69 +2,135 @@ import java.awt.*;
 import java.io.*;
 import java.util.*;
 
-public class Registrering
+public class Registration
 {
    public ArrayList<Member> memberList = new ArrayList<>();
+
    File fMembers = new File("members.txt");
    Scanner scan = new Scanner(System.in);
    Desktop desktop = Desktop.getDesktop();
    boolean sentinel = true;
    Member member = new Member();
+   Teams team = new Teams();
+   Coach coach = new Coach();
 
    public void registerMember()
    {
-
-
 
       System.out.println("Opret det nye medlem herunder: ");
       System.out.print("Skal det nye medlem registreres som konkurrencesvømmer, 'ja' eller 'nej': ");
       String memberType = scan.nextLine();
 
-      System.out.print("Fornavn: ");
-      String firstname = scan.nextLine();
+      /*System.out.print("Fornavn: ");
+      String firstName = scan.nextLine();
       System.out.print("Efternavn: ");
       String surname = scan.nextLine();
+      //System.out.println("Køn ");
+      String gender = scan.nextLine();
       System.out.print("Alder: ");
       int age = scan.nextInt();
       System.out.print("Telefonnummer: ");
       int id = scan.nextInt();
-
+      boolean membershipActive = true;
+      int debt = 0;
+      int subscription = 0;
+      double trainingResult = 0;
+      String swimmingDisciplines = "";*/
 
       //Motionist
-      if (memberType.equals("nej")) {
-         exerciser = new Exerciser(navn, alder, aktivitetsform, betalt);
-         if (motionist.getAlder() < 18) {
+      if (memberType.equals("nej"))
+      {
+         System.out.print("Fornavn: ");
+         String firstName = scan.nextLine();
+         System.out.print("Efternavn: ");
+         String surname = scan.nextLine();
+         System.out.println("Køn ");
+         String gender = scan.nextLine();
+         System.out.print("Alder: ");
+         int age = scan.nextInt();
+         System.out.print("Telefonnummer: ");
+         int id = scan.nextInt();
+         boolean membershipActive = true;
+         int debt = 0;
+         int subscription = 0;
+         Exerciser exerciser = new Exerciser(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt);
+         if (age < 18)
+         {
             System.out.println("Medlemmet er motionist og i kategorien juniormedlem.");
-         } else if (motionist.getAlder() >= 18) {
+            subscription = 1000;
+            System.out.println("Junior medlemsskab (pris: " + subscription + "kr.)");
+         }
+         else if (age >= 18 && age < 60)
+         {
             System.out.println("Medlemmet er motionist og i kategorien seniormedlem.");
+            subscription = 1600;
+            System.out.println("Senior medlemsskab (pris: " + subscription + "kr.)");
+         }
+         else if (age > 60)
+         {
+            System.out.println("Medlemmet er motionist og i kategorien pensionistmedlem.");
+            subscription = 1200;
+            System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
          }
          System.out.println();
-         System.out.print(motionist.toString());
-         medlemmer.add(motionist);
-         kassererController.kontingentBetaling(motionist);
-         filHåndtering.filSkrivning(motionist);
 
-         //Konkurrencesvømmer
-      } else if (memberType.equals("ja")) {
-         konkurrenceSvømmer = new KonkurrenceSvømmer(navn, alder, aktivitetsform, betalt);
-         if (konkurrenceSvømmer.getAlder() < 18) {
-            hold.tilføjJuniorKonkurrencesvømmere(konkurrenceSvømmer);
+
+         memberList.add(exerciser);
+         System.out.print(exerciser.toString());
+
+      //Konkurrencesvømmer
+      }
+      else if (memberType.equals("ja"))
+      {
+         System.out.print("Fornavn: ");
+         String firstName = scan.nextLine();
+         System.out.print("Efternavn: ");
+         String surname = scan.nextLine();
+         System.out.print("Køn: ");
+         String gender = scan.nextLine();
+         System.out.print("Alder: ");
+         int age = scan.nextInt();
+         System.out.print("Telefonnummer: ");
+         int id = scan.nextInt();
+         boolean membershipActive = true;
+         int debt = 0;
+         int subscription = 0;
+         double trainingResult = 0;
+         System.out.println("Hvilken disciplin: [CRAWL] [RYGCRAWL] [BUTTERFLY] [BRYSTSVØMNING]");
+         String swimmingDisciplines = scan.next();
+
+         Competitor competitor = new Competitor(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt, trainingResult, swimmingDisciplines);
+         if (age < 18)
+         {
+            team.addJuniorCompetitor(competitor);
             System.out.println("Medlemmet er konkurrencesvømmer i kategorien juniormedlem, og dermed tildelt ungdomsholdet.");
-         } else if (konkurrenceSvømmer.getAlder() >= 18) {
-            hold.tilføjSeniorKonkurrencesvømmere(konkurrenceSvømmer);
-            System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
+            subscription = 1000;
+            System.out.println("Junior medlemsskab (pris: " + subscription + "kr.)");
          }
-         konkurrenceSvømmer.svømmeDisciplin(konkurrenceSvømmer);
+         else if (age >= 18 && age < 60)
+         {
+            subscription = 1600;
+            System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
+            System.out.println("Senior medlemsskab (pris: " + subscription + "kr.)");
+            team.addSeniorCompetitor(competitor);
+         }
+         else if (age > 60)
+         {
+            System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
+            subscription = 1200;
+            System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
+
+         }
+
          System.out.println();
-         System.out.print(konkurrenceSvømmer.toString());
-         medlemmer.add(konkurrenceSvømmer);
-         kassererController.kontingentBetaling(konkurrenceSvømmer);
-         filHåndtering.filSkrivning(konkurrenceSvømmer);
+         memberList.add(competitor);
+         member.whatSubcription(competitor);
+         System.out.println(competitor.toString());
       }
 
    }
 
-   public void filSkrivning(Member member)throws Exception
+   public void fileWrite(Member member)throws Exception
    {
       try
       {

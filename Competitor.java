@@ -8,9 +8,9 @@ public class Competitor extends Member
     private double trainingResult;
     private String swimmingDisciplines;
 
-    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines)
+    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines)
     {
-        super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive, debt);
+        super(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
         this.swimmingDisciplines = swimmingDisciplines;
 

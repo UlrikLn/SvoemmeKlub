@@ -1,0 +1,4 @@
+
+ID: -99, Navn: John Dillermand, Alder: -99, Medlemskab: [AKTIV]dummy
+
+ID: -99, Navn: John Dillermand, Alder: -99, Medlemskab: [AKTIV]dummy

@@ -22,7 +22,7 @@ public class Menu
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
         Member member = new Member();
-        Registrering registrering = new Registrering();
+        Registration registration = new Registration();
         File memberFile = new File("members.txt");
 
         while (sentinel)
@@ -44,10 +44,7 @@ public class Menu
                 int tal = scan.nextInt();
                 if (tal == 1)
                 {
-                    sentinel = false;
-                    System.out.println("Åbner 1");
-                    Registrering.filSkrivning();
-
+                    registration.registerMember();
                 }
                 else if (tal == 2)
                 {
@@ -62,7 +59,7 @@ public class Menu
                     System.out.println("Printer Liste....");
                     member.sleep();
                     member.sleep();
-                    registrering.seeList();
+                    registration.seeList();
                 }
                 else if (tal == 5)
                 {

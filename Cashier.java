@@ -13,7 +13,7 @@ public class Cashier
     Member member = new Member();
 
     Menu menu = new Menu();
-    Registrering registrering = new Registrering();
+    Registration registration = new Registration();
 
 
     public void cashierMenu()
@@ -145,7 +145,7 @@ public class Cashier
                 int prut = scan.nextInt();
                 int id2 = member.getId();
                 // Måske stort M med member??
-                registrering.memberList.removeIf(member -> (id2 == prut));
+                registration.memberList.removeIf(member -> (id2 == prut));
                 debtList.removeIf(member -> (id2 == prut));
                 // == virker fordi man sammenlinger 2x int.
                 System.out.println("Medlem Slettes");

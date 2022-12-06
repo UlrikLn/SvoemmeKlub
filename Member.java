@@ -7,7 +7,7 @@ public class Member
     private String gender = "andet";
     private String firstName = "John";
     private String surname = "Dillermand";
-    private int birthday = -99;
+    private int age = -99;
     private int subscription = -99;
     // medlemmet kan være 3 forskellige membertypes: Competitor, Excerciser og Passiv
     private String memberType = "Prut";
@@ -25,13 +25,13 @@ public class Member
     }
 
     // Constructors
-    public Member (int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive, int debt)
+    public Member (int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt)
     {
         this.id = id;
         this.gender = gender;
         this.firstName = firstName;
         this.surname = surname;
-        this.birthday = birthday;
+        this.age = age;
         this.subscription = subscription;
         this.memberType = memberType;
         this.membershipActive = membershipActive;
@@ -62,9 +62,9 @@ public class Member
         return firstName + " " + surname;
     }
 
-    public int getBirthday()
+    public int getAge()
     {
-        return birthday;
+        return age;
     }
 
     public String getMemberType()
@@ -133,7 +133,7 @@ public class Member
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
             return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Alder: " + birthday + ", Medlemskab: [AKTIV]" + subs;
+                    ", Alder: " + age + ", Medlemskab: [AKTIV]" + subs;
 
         }
         else
@@ -148,38 +148,38 @@ public class Member
                 subs =  ", Kontingent: [Ikke Betalt]";
             }
             return "ID: " + id + ", Navn: " + firstName + " " + surname +
-                    ", Alder: " + birthday + ", Medlemskab: [PASSIV]" + subs;
+                    ", Alder: " + age + ", Medlemskab: [PASSIV]" + subs;
 
 
         }
 
     }
-    public int whatSubcription()
+    public void whatSubcription(Member member)
     {
-        if (getMembershipActive() == true)
+        /*if (membershipActive == true)
         {
-            if (getBirthday() < 18)
+            if (age < 18)
             {
-                setSubscription(1000);
-                System.out.println("Junior medlemsskab (pris: " + getSubscription() + "kr.)");
+                subscription = 1000;
+                System.out.println("Junior medlemsskab (pris: " + subscription + "kr.)");
             }
-            else if (getBirthday() >= 17 && getBirthday() < 60)
+            else if (age > 18 && age < 60)
             {
-                setSubscription(1600);
-              System.out.println("Senior medlemsskab (pris: " + getSubscription() + "kr.)");
+                subscription = 1600;
+              System.out.println("Senior medlemsskab (pris: " + subscription + "kr.)");
             }
-            else if (getBirthday() > 60)
+            else if (age > 60)
             {
-                setSubscription(1200);
-                System.out.println("Pensionist medlemsskab (pris: " + getSubscription() + "kr.)");
+                subscription = 1200;
+                System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
             }
         }
-        else if (getMembershipActive() == false)
+        else if (membershipActive == false)
         {
-            setSubscription(500);
-            System.out.println("Passivt medlemsskab (pris: " + getSubscription() + "kr.)");
-        }
-        return getSubscription();
+            subscription = 500;
+            System.out.println("Passivt medlemsskab (pris: " + subscription + "kr.)");
+        }*/
+
     }
 
     public void sleep()
