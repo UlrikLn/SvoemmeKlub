@@ -57,8 +57,12 @@ public class Cashier
                 }
                 else if ( tal == 0 )
                 {
+                    System.out.println("Går Tilbage...");
+                    member.sleep();
+                    member.sleep();
+                    menu.menuLoop();
                     sentinel = false;
-                    System.out.println("Lukker programmet");
+
                 }
                 else
                 {

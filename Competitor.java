@@ -2,17 +2,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-enum SwimmingDisciplines
-{
-    BUTTERFLY, BRYSTSVOEMNING, RYGCRAWL, CRAWL
-}
 
 public class Competitor extends Member
 {
     private double trainingResult;
-    SwimmingDisciplines swimmingDisciplines;
+    private String swimmingDisciplines;
 
-    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, SwimmingDisciplines swimmingDisciplines)
+    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines)
     {
         super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
@@ -20,67 +16,31 @@ public class Competitor extends Member
 
     }
 
-    // Tildel svømmediscipliner til en competitor
-    public void SwimmingDiscipline(Competitor competitor)
+    // Setters
+
+    public void setTrainingResult(double trainingResult)
     {
-        System.out.println("Disciplin: ");
-        Scanner scanner = new Scanner(System.in);
-        String choice = scanner.nextLine();
-
-        if(choice.equals("butterfly"))
-        {
-            competitor.setSwimmingDisciplines(swimmingDisciplines.BUTTERFLY);
-        }
-        else if (choice.equals("brystsvømning"))
-        {
-            competitor.setSwimmingDisciplines(swimmingDisciplines.BRYSTSVOEMNING);
-        }
-        else if (choice.equals("rygcrawl"))
-        {
-            competitor.setSwimmingDisciplines(swimmingDisciplines.RYGCRAWL);
-        }
-        else if (choice.equals("crawl"))
-        {
-            competitor.setSwimmingDisciplines(swimmingDisciplines.CRAWL);
-        }
-    }
-    /*
-    public void tellItLikeItIs() {
-        switch (swimmingDisciplines) {
-            case BUTTERFLY:
-                System.out.println("Du har valgt butterfly som discpiplin.");
-                break;
-
-            case BRYSTSVOEMNING:
-                System.out.println("Du har valgt brystsvoemning som discpiplin.");
-                break;
-
-            case RYGCRAWL:
-                System.out.println("Du har valgt rygcrawl som discpiplin.");
-                break;
-
-            case CRAWL:
-                System.out.println("Du har valgt crawl som discpiplin.");
-                break;
-
-            default:
-                System.out.println("Du kan ikke vælge den discpiplin");
-                break;
-        }
-    }
-     */
-
-    public void setTrainingResult(double trainingResult) {
         this.trainingResult = trainingResult;
     }
 
-    public SwimmingDisciplines getSwimmingDisciplines() {
+    public void setSwimmingDisciplines(String swimmingDisciplines)
+    {
+        this.swimmingDisciplines = swimmingDisciplines;
+    }
+
+    // Getters
+
+    public double getTrainingResult(double trainingResult)
+    {
+        return trainingResult;
+    }
+
+    public String getSwimmingDisciplines(String swimmingDisciplines)
+    {
         return swimmingDisciplines;
     }
 
-    public void setSwimmingDisciplines(SwimmingDisciplines swimmingDisciplines) {
-        this.swimmingDisciplines = swimmingDisciplines;
-    }
+
 
     // Måske lave en toSring
 

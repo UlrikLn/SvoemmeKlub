@@ -10,16 +10,16 @@ public class Menu
     // så vi laver en metode herinde, der bare hedder start() som så kører vore "menu" while loop.
     // og så inde i vores main() der kalder laver vi en Menu menu = new Menu og kalder menu.start().
 
-    public static void main(String[] args)
-    {
         Cashier cashier = new Cashier();
         Coach coach = new Coach();
         Scanner scan = new Scanner(System.in);
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
         Member member = new Member();
+        Registrering registrering = new Registrering();
         File memberFile = new File("members.txt");
-
+    public void menuLoop()
+    {
         while (sentinel)
         {
             System.out.println("Vaelg et tal fra 0-9 for at abne funktioner:");
@@ -44,22 +44,21 @@ public class Menu
                 }
                 else if (tal == 2)
                 {
-                    sentinel = false;
-                    System.out.println("Aabner 2");
+                    cashier.deleteMember();
                 }
                 else if (tal == 3)
                 {
-                    sentinel = false;
-                    System.out.println("Aabner 3");
+                    System.out.println("Ikke færdigt gjordt endnu");
                 }
                 else if (tal == 4)
                 {
-                    sentinel = false;
-                    System.out.println("Aabner 4");
+                    System.out.println("Printer Liste....");
+                    member.sleep();
+                    member.sleep();
+                    registrering.seeList();
                 }
                 else if (tal == 5)
                 {
-                    //sentinel = false;
                     try
                     {
                         desktop.open(memberFile);
@@ -76,20 +75,20 @@ public class Menu
                 }
                 else if (tal == 6)
                 {
-                    sentinel = false;
                     System.out.println("Aabner kasserer");
                     cashier.cashierMenu();
+                    sentinel = false;
                 }
                 else if (tal == 7)
                 {
-                    sentinel = false;
                     System.out.println("Aabner træner");
                     coach.coachMenu();
+                    sentinel = false;
                 }
                 else if (tal == 0)
                 {
-                    sentinel = false;
                     System.out.println("Lukker programmet");
+                    sentinel = false;
                 }
                 else
                 {
@@ -106,7 +105,4 @@ public class Menu
 
         }
     }
-
-
-
 }

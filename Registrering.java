@@ -12,21 +12,21 @@ public class Registrering
    Member member = new Member();
 
 
-   public void filSkrivning(Member member)
+   public void filSkrivning(Member member)throws Exception
    {
       try
       {
-         //PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
-         FileWriter fw = new FileWriter("members.txt", true);
+
+         /*FileWriter fw = new FileWriter("members.txt", true);
          BufferedWriter bw = new BufferedWriter(fw);
          PrintWriter out = new PrintWriter(bw);
+         out.append(member.toString());*/
 
-         out.append(member.toString());
-
-         /*output.append("\n");
+         PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
+         output.append("\n");
          output.append(member.toString());
          output.append("\n");
-         output.close();*/
+         output.close();
          System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
       } catch (IOException e)
       {
@@ -46,7 +46,15 @@ public class Registrering
       memberList.add(new Member(68752957,"Mand",  "Ulrik","Lehun",22,1600,"Passive",false,0));
       memberList.add(new Member(26429712,"Mand",  "Frederik", "Wessel", 24, 500, "Passive",false,0));
       memberList.add(new Member(29282754,"Mand",  "Christian", "Lorenzen", 29, 1600, "Competitor",true,0));
-      memberList.add(new Competitor())
+      memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02,"Crawl"));
+   }
+
+   public void seeList()
+   {
+      for ( Member value : memberList )
+      {
+         System.out.println(value);
+      }
    }
 }
 
