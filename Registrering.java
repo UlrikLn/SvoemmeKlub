@@ -4,13 +4,65 @@ import java.util.*;
 
 public class Registrering
 {
-   public static ArrayList<Member> memberList = new ArrayList<>();
+   public ArrayList<Member> memberList = new ArrayList<>();
    File fMembers = new File("members.txt");
    Scanner scan = new Scanner(System.in);
    Desktop desktop = Desktop.getDesktop();
    boolean sentinel = true;
    Member member = new Member();
 
+   public void registerMember()
+   {
+
+
+
+      System.out.println("Opret det nye medlem herunder: ");
+      System.out.print("Skal det nye medlem registreres som konkurrencesvømmer, 'ja' eller 'nej': ");
+      String memberType = scan.nextLine();
+
+      System.out.print("Fornavn: ");
+      String firstname = scan.nextLine();
+      System.out.print("Efternavn: ");
+      String surname = scan.nextLine();
+      System.out.print("Alder: ");
+      int age = scan.nextInt();
+      System.out.print("Telefonnummer: ");
+      int id = scan.nextInt();
+
+
+      //Motionist
+      if (memberType.equals("nej")) {
+         exerciser = new Exerciser(navn, alder, aktivitetsform, betalt);
+         if (motionist.getAlder() < 18) {
+            System.out.println("Medlemmet er motionist og i kategorien juniormedlem.");
+         } else if (motionist.getAlder() >= 18) {
+            System.out.println("Medlemmet er motionist og i kategorien seniormedlem.");
+         }
+         System.out.println();
+         System.out.print(motionist.toString());
+         medlemmer.add(motionist);
+         kassererController.kontingentBetaling(motionist);
+         filHåndtering.filSkrivning(motionist);
+
+         //Konkurrencesvømmer
+      } else if (memberType.equals("ja")) {
+         konkurrenceSvømmer = new KonkurrenceSvømmer(navn, alder, aktivitetsform, betalt);
+         if (konkurrenceSvømmer.getAlder() < 18) {
+            hold.tilføjJuniorKonkurrencesvømmere(konkurrenceSvømmer);
+            System.out.println("Medlemmet er konkurrencesvømmer i kategorien juniormedlem, og dermed tildelt ungdomsholdet.");
+         } else if (konkurrenceSvømmer.getAlder() >= 18) {
+            hold.tilføjSeniorKonkurrencesvømmere(konkurrenceSvømmer);
+            System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
+         }
+         konkurrenceSvømmer.svømmeDisciplin(konkurrenceSvømmer);
+         System.out.println();
+         System.out.print(konkurrenceSvømmer.toString());
+         medlemmer.add(konkurrenceSvømmer);
+         kassererController.kontingentBetaling(konkurrenceSvømmer);
+         filHåndtering.filSkrivning(konkurrenceSvømmer);
+      }
+
+   }
 
    public void filSkrivning(Member member)throws Exception
    {

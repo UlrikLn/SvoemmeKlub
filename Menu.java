@@ -10,6 +10,12 @@ public class Menu
     // så vi laver en metode herinde, der bare hedder start() som så kører vore "menu" while loop.
     // og så inde i vores main() der kalder laver vi en Menu menu = new Menu og kalder menu.start().
 
+    public static void main (String[] args)
+    {
+        menuLoop();
+    }
+    public static void menuLoop()
+    {
         Cashier cashier = new Cashier();
         Coach coach = new Coach();
         Scanner scan = new Scanner(System.in);
@@ -18,11 +24,10 @@ public class Menu
         Member member = new Member();
         Registrering registrering = new Registrering();
         File memberFile = new File("members.txt");
-    public void menuLoop()
-    {
+
         while (sentinel)
         {
-            System.out.println("Vaelg et tal fra 0-9 for at abne funktioner:");
+            System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
             System.out.println("----------------------------------------------------------");
             System.out.println("| 1 | Opret nyt medlem");
             System.out.println("| 2 | Slet medlem");
@@ -40,7 +45,9 @@ public class Menu
                 if (tal == 1)
                 {
                     sentinel = false;
-                    System.out.println("Aabner 1");
+                    System.out.println("Åbner 1");
+                    Registrering.filSkrivning();
+
                 }
                 else if (tal == 2)
                 {
@@ -62,7 +69,7 @@ public class Menu
                     try
                     {
                         desktop.open(memberFile);
-                        System.out.println("Dokumentet aabner");
+                        System.out.println("Dokumentet åbner");
                         System.out.println("----------------------------------------------------------");
                         member.sleep();
                     }
@@ -75,13 +82,13 @@ public class Menu
                 }
                 else if (tal == 6)
                 {
-                    System.out.println("Aabner kasserer");
+                    System.out.println("Åbner kasserer");
                     cashier.cashierMenu();
                     sentinel = false;
                 }
                 else if (tal == 7)
                 {
-                    System.out.println("Aabner træner");
+                    System.out.println("Åbner træner");
                     coach.coachMenu();
                     sentinel = false;
                 }

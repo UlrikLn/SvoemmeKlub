@@ -20,10 +20,10 @@ public class Cashier
     {
         while ( sentinel )
         {
-            System.out.println("Vaelg et tal fra 0-9 for at aabne funktioner:");
+            System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
             System.out.println("----------------------------------------------------------");
             System.out.println("| 1 | Se Kontigent Priser");
-            System.out.println("| 2 | Tilfoej Medlemmer til Restance");
+            System.out.println("| 2 | Tilføj Medlemmer til Restance");
             System.out.println("| 3 | Se Medlemmer i Restance");
             System.out.println("| 4 | Slet Medlem");
             System.out.println("| 0 | Gå Tilbage");
@@ -34,10 +34,11 @@ public class Cashier
                 int tal = scan.nextInt();
                 if ( tal == 1 )
                 {
-                        System.out.println("Printer Kontigent Priser....");
-                        member.sleep();
-                        member.sleep();
-                        subcribtionPrices();
+                    System.out.println("Printer Kontigent Priser....");
+                    member.sleep();
+                    subcribtionPrices();
+                    member.sleep();
+
                 }
                 else if ( tal == 2 )
                 {
@@ -58,7 +59,6 @@ public class Cashier
                 else if ( tal == 0 )
                 {
                     System.out.println("Går Tilbage...");
-                    member.sleep();
                     member.sleep();
                     menu.menuLoop();
                     sentinel = false;

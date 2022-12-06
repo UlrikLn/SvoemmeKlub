@@ -14,6 +14,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
+    Menu menu = new Menu();
     public void coachMenu()
     {
         while ( sentinel )
@@ -39,37 +40,39 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
                     sentinel = false;
                     System.out.println("Indtast Resultater for junior medlem: ");
 
-                    System.out.println("Aabner 1");
+                    System.out.println("Åbner 1");
                 } else if ( tal == 2 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 2");
+                    System.out.println("Åbner 2");
                 } else if ( tal == 3 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 3");
+                    System.out.println("Åbner 3");
                 } else if ( tal == 4 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 4");
+                    System.out.println("Åbner 4");
                 } else if ( tal == 5 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 5");
+                    System.out.println("Åbner 5");
                 } else if ( tal == 6 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 6");
+                    System.out.println("Åbner 6");
                 } else if ( tal == 7 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 7");
+                    System.out.println("Åbner 7");
                 } else if ( tal == 8 )
                 {
                     sentinel = false;
-                    System.out.println("Aabner 8");
+                    System.out.println("Åbner 8");
                 } else if ( tal == 0 )
                 {
+                    member.sleep();
+                    menu.menuLoop();
                     sentinel = false;
                     System.out.println("Lukker programmet");
                 } else

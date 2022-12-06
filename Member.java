@@ -12,8 +12,7 @@ public class Member
     // medlemmet kan være 3 forskellige membertypes: Competitor, Excerciser og Passiv
     private String memberType = "Prut";
     // Hvis medlemmets membership status er false, er medlemmet en Passiv memeberType
-    boolean membershipActive = true;
-
+    private boolean membershipActive = true;
     private int debt = 0;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
@@ -187,7 +186,7 @@ public class Member
     {
         try
         {
-            Thread.sleep(1200);
+            Thread.sleep(900);
         }
         catch (InterruptedException d)
         {

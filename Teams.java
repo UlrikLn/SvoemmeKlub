@@ -4,7 +4,6 @@ public class Teams
 
         private ArrayList<Competitor> juniorTeam = new ArrayList<>();
         private ArrayList<Competitor> seniorTeam = new ArrayList<>();
-        private ArrayList<Competitor> teamSetup = new ArrayList();
 
         public void addJuniorCompetitor(Competitor competitor)
         {
