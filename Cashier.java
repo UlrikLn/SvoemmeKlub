@@ -11,7 +11,10 @@ public class Cashier
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
+
     Menu menu = new Menu();
+    Registrering registrering = new Registrering();
+
 
     public void cashierMenu()
     {
@@ -138,7 +141,7 @@ public class Cashier
                 int prut = scan.nextInt();
                 int id2 = member.getId();
                 // Måske stort M med member??
-                menu.memberList.removeIf(member -> (id2 == prut));
+                registrering.memberList.removeIf(member -> (id2 == prut));
                 debtList.removeIf(member -> (id2 == prut));
                 // == virker fordi man sammenlinger 2x int.
                 System.out.println("Medlem Slettes");

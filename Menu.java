@@ -6,8 +6,6 @@ import java.awt.Desktop;
 
 public class Menu
 {
-    public static ArrayList<Member> memberList = new ArrayList<>();
-
     // Vi skal lave en ny Class der hedder Delfinen hvor vores main() skal være
     // så vi laver en metode herinde, der bare hedder start() som så kører vore "menu" while loop.
     // og så inde i vores main() der kalder laver vi en Menu menu = new Menu og kalder menu.start().
@@ -17,26 +15,10 @@ public class Menu
         Cashier cashier = new Cashier();
         Coach coach = new Coach();
         Scanner scan = new Scanner(System.in);
-        Member member = new Member();
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
+        Member member = new Member();
         File memberFile = new File("members.txt");
-
-
-
-        memberList.add(new Member(26188398,"Mand",  "Ulrik","Lehun",22,1600,"Competitor",true,0));
-        memberList.add(new Member(61474346,"Mand",  "Jacob","Gram",23,1600,"Competitor",true,0));
-        memberList.add(new Member(85986098,"Kvinde","Mette","Frederiksen",45,500,"Passive",false,0));
-        memberList.add(new Member(28985049,"Mand",  "Adam","Aboudi",14,1000,"Competitor",true,0));
-        memberList.add(new Member(48484848,"Mand",  "Klaus","Jensen",69,1200,"Motionist",true,0));
-        memberList.add(new Member(94994376,"Mand",  "Preben","Lundin",58,1600,"Motionist",true,0));
-        memberList.add(new Member(64576285,"Kvinde","Jeniffer","Lopez",53,1600,"Motionist",true,0));
-        memberList.add(new Member(68752957,"Mand",  "Ulrik","Lehun",22,1600,"Passive",false,0));
-        memberList.add(new Member(26429712,"Mand",  "Frederik", "Wessel", 24, 500, "Passive",false,0));
-        memberList.add(new Member(29282754,"Mand",  "Christian", "Lorenzen", 29, 1600, "Competitor",true,0));
-
-
-
 
         while (sentinel)
         {

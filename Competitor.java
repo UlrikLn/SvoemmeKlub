@@ -12,7 +12,7 @@ public class Competitor extends Member
     private double trainingResult;
     SwimmingDisciplines swimmingDisciplines;
 
-    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive,int debt, double trainingResult, SwimmingDisciplines swimmingDisciplines)
+    public Competitor(int id, String gender, String firstName, String surname, int birthday, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, SwimmingDisciplines swimmingDisciplines)
     {
         super(id, gender, firstName, surname, birthday, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
