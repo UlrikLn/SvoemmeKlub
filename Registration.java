@@ -14,6 +14,7 @@ public class Registration
     Member member = new Member();
     Teams team = new Teams();
     Coach coach = new Coach();
+    Cashier cashier = new Cashier();
 
     public void registerMember() throws Exception
     {
@@ -152,24 +153,31 @@ public class Registration
 
     public void deleteMember()
     {
-        System.out.println("Indtast medlems id: ");
-        int choice = scan.nextInt();
-
-        for (int i = 0; i < memberList.size(); i++)
+        try
         {
-            if(memberList.get(i).getId()==choice)
+            System.out.println("Indtast medlems id: ");
+            int choice = scan.nextInt();
+
+            for (int i = 0; i < memberList.size(); i++)
             {
-                memberList.remove(i);
+                if (memberList.get(i).getId() == choice)
+                {
+                    memberList.remove(i);
+                }
             }
+            for (int i = 0; i < cashier.debtList.size(); i++)
+            {
+                if (cashier.debtList.get(i).getId() == choice)
+                {
+                    cashier.debtList.remove(i);
+                }
+            }
+        }catch (Exception e)
+        {
+            System.out.println("Ugyldigt input, prov igen med et nummer");
+            scan.next();
         }
     }
-        /* if(customers.indexOf(james) != -1) {
-        // ...
-
-        or (int i = 0; i<memberList.size(); i++)
-        }*/
-
-        // if (memberList.contains(james))
 
     public void fileWrite() throws Exception
     {

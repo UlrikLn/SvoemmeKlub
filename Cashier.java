@@ -8,7 +8,7 @@ public class Cashier
     // Hvem der har betal og ikke betalt ()
     // Gøre folk passive (Done)
     // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
-    private final ArrayList<Member> debtList = new ArrayList<>();
+    public  ArrayList<Member> debtList = new ArrayList<>();
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
@@ -51,7 +51,7 @@ public class Cashier
                     seeDeficit();
                 } else if ( tal == 4 )
                 {
-                    deleteMember();
+                    registration.deleteMember();
 
                 } else if ( tal == 0 )
                 {
@@ -98,11 +98,11 @@ public class Cashier
 
     public void debtListRemove()
     {
-        for ( Member member1 : debtList )
+        for (int i = 0; i < debtList.size(); i++)
         {
-            if ( member1.getDebt() <= 0 )
+            if(debtList.get(i).getDebt() <= 0)
             {
-                debtList.remove(member1);
+                debtList.remove(i);
                 System.out.println("Medlem fjernet fra restance liste");
             }
         }
@@ -124,67 +124,6 @@ public class Cashier
         {
             System.out.println(member1);
         }
-    }
-
-
-    public void deleteMember()
-    {
-        try
-        {
-            System.out.println("Indtast medlems id: ");
-            int choice = scan.nextInt();
-
-            for ( Member member2 : registration.memberList )
-            {
-                if ( member2.getId() == choice )
-                {
-                    registration.memberList.remove(member2);
-                }
-            }
-            for ( Member member3 : debtList )
-            {
-                if ( member3.getId() == choice )
-                {
-                    debtList.remove(member3);
-                }
-            }
-        } catch (Exception e)
-        {
-            System.out.println("Ugyldigt input, prov igen med et nummer");
-            //member.sleep();
-            scan.next();
-        }
-
-        /*
-        sentinel = true;
-
-        while(sentinel)
-        {
-            try
-            {
-                System.out.println("Indtast Telefonnummer på medlemmet");
-                int prut = scan.nextInt();
-                int id2 = member.getId();
-                // Måske stort M med member??
-                registration.memberList.removeIf(member -> (id2 == prut));
-                debtList.removeIf(member -> (id2 == prut));
-
-
-                Predicate<Member> pr = (Member age) ->(age.getAge() = prut);
-                registration.memberList.removeIf(pr);
-                virker fordi man sammenlinger 2x int.
-                System.out.println("Medlem Slettes");
-                sentinel = false;
-            }
-            catch (Exception e)
-            {
-                System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                member.sleep();
-                scan.next();
-            }
-        }
-        */
-
     }
 
 }
