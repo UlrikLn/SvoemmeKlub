@@ -10,10 +10,11 @@ public class Menu
     // så vi laver en metode herinde, der bare hedder start() som så kører vore "menu" while loop.
     // og så inde i vores main() der kalder laver vi en Menu menu = new Menu og kalder menu.start().
 
-    public static void main (String[] args)
+    public static void main(String[] args)
     {
         menuLoop();
     }
+
     public static void menuLoop()
     {
         Cashier cashier = new Cashier();
@@ -24,8 +25,9 @@ public class Menu
         Member member = new Member();
         Registration registration = new Registration();
         File memberFile = new File("members.txt");
+        registration.newMember();
 
-        while (sentinel)
+        while ( sentinel )
         {
             System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
             System.out.println("----------------------------------------------------------");
@@ -42,68 +44,59 @@ public class Menu
             try
             {
                 int tal = scan.nextInt();
-                if (tal == 1)
+                if ( tal == 1 )
                 {
                     registration.registerMember();
-                }
-                else if (tal == 2)
+                    registration.fileWrite();
+                } else if ( tal == 2 )
                 {
-                    cashier.deleteMember();
-                }
-                else if (tal == 3)
+                    registration.deleteMember();
+                } else if ( tal == 3 )
                 {
                     System.out.println("Ikke færdigt gjordt endnu");
-                }
-                else if (tal == 4)
+                } else if ( tal == 4 )
                 {
                     System.out.println("Printer Liste....");
                     registration.seeList();
-                    member.sleep();
-                    member.sleep();
-                }
-                else if (tal == 5)
+                    //member.sleep();
+                    //member.sleep();
+                } else if ( tal == 5 )
                 {
                     try
                     {
                         desktop.open(memberFile);
                         System.out.println("Dokumentet åbner");
                         System.out.println("----------------------------------------------------------");
-                        member.sleep();
-                    }
-                    catch (Exception e)
+                        //member.sleep();
+                    } catch (Exception e)
                     {
                         System.out.println("**********************Error**********************");
                         System.out.println("                File doesn't open");
                         System.out.println("*************************************************");
                     }
-                }
-                else if (tal == 6)
+                } else if ( tal == 6 )
                 {
                     System.out.println("Åbner kasserer");
                     cashier.cashierMenu();
                     sentinel = false;
-                }
-                else if (tal == 7)
+                } else if ( tal == 7 )
                 {
                     System.out.println("Åbner træner");
                     coach.coachMenu();
                     sentinel = false;
-                }
-                else if (tal == 0)
+                } else if ( tal == 0 )
                 {
                     System.out.println("Lukker programmet");
                     sentinel = false;
-                }
-                else
+                } else
                 {
                     System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                    member.sleep();
+                    //member.sleep();
                 }
-            }
-            catch(Exception e)
+            } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                member.sleep();
+                //member.sleep();
                 scan.next();
             }
 

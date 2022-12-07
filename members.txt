@@ -1,8 +1,48 @@
-
-ID: -99, Navn: John Dillermand, Alder: -99, Medlemskab: [AKTIV]dummy
-
-ID: -99, Navn: John Dillermand, Alder: -99, Medlemskab: [AKTIV]dummy
-
-ID: -99, Navn: John Dillermand, Køn: andet, Alder: -99, Medlemskab: [Aktiv], Kontingent: -99, , Kontingent: [Betalt]
-
-ID: -99, Navn: John Dillermand, Køn: andet, Alder: -99, Medlemskab: [Aktiv], Kontingent: -99, , Kontingent: [Betalt]
+ID: 26188398, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 61474346, Navn: Jacob Gram, Køn: Mand, Alder: 23, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 85986098, Navn: Mette Frederiksen, Køn: Kvinde, Alder: 45, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 28985049, Navn: Adam Aboudi, Køn: Mand, Alder: 14, Medlemskab: [Aktiv], Kontingent: 1000, , Kontingent: [Betalt]
+ID: 48484848, Navn: Klaus Jensen, Køn: Mand, Alder: 69, Medlemskab: [Aktiv], Kontingent: 1200, , Kontingent: [Betalt]
+ID: 94994376, Navn: Preben Lundin, Køn: Mand, Alder: 58, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 64576285, Navn: Jeniffer Lopez, Køn: Kvinde, Alder: 53, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 68752957, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Passiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 26429712, Navn: Frederik Wessel, Køn: Mand, Alder: 24, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 29282754, Navn: Christian Lorenzen, Køn: Mand, Alder: 29, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 22975312, Navn: Morten Olsen, Køn: Kvinde, Alder: 64, Medlemskab: [Aktiv], Kontingent: 1200, Disciplin: Crawl
+ID: 22, Navn: hallo jens, Køn: ninja, Alder: 12, Medlemskab: [Aktiv], Kontingent: 0, Disciplin: Crawl
+ID: 26188398, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 61474346, Navn: Jacob Gram, Køn: Mand, Alder: 23, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 85986098, Navn: Mette Frederiksen, Køn: Kvinde, Alder: 45, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 28985049, Navn: Adam Aboudi, Køn: Mand, Alder: 14, Medlemskab: [Aktiv], Kontingent: 1000, , Kontingent: [Betalt]
+ID: 48484848, Navn: Klaus Jensen, Køn: Mand, Alder: 69, Medlemskab: [Aktiv], Kontingent: 1200, , Kontingent: [Betalt]
+ID: 94994376, Navn: Preben Lundin, Køn: Mand, Alder: 58, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 64576285, Navn: Jeniffer Lopez, Køn: Kvinde, Alder: 53, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 68752957, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Passiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 26429712, Navn: Frederik Wessel, Køn: Mand, Alder: 24, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 29282754, Navn: Christian Lorenzen, Køn: Mand, Alder: 29, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 22975312, Navn: Morten Olsen, Køn: Kvinde, Alder: 64, Medlemskab: [Aktiv], Kontingent: 1200, Disciplin: Crawl
+ID: 22, Navn: hallo jens, Køn: ninja, Alder: 12, Medlemskab: [Aktiv], Kontingent: 0, Disciplin: Crawl
+ID: 26188398, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 61474346, Navn: Jacob Gram, Køn: Mand, Alder: 23, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 85986098, Navn: Mette Frederiksen, Køn: Kvinde, Alder: 45, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 28985049, Navn: Adam Aboudi, Køn: Mand, Alder: 14, Medlemskab: [Aktiv], Kontingent: 1000, , Kontingent: [Betalt]
+ID: 48484848, Navn: Klaus Jensen, Køn: Mand, Alder: 69, Medlemskab: [Aktiv], Kontingent: 1200, , Kontingent: [Betalt]
+ID: 94994376, Navn: Preben Lundin, Køn: Mand, Alder: 58, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 64576285, Navn: Jeniffer Lopez, Køn: Kvinde, Alder: 53, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 68752957, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Passiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 26429712, Navn: Frederik Wessel, Køn: Mand, Alder: 24, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 29282754, Navn: Christian Lorenzen, Køn: Mand, Alder: 29, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 22975312, Navn: Morten Olsen, Køn: Kvinde, Alder: 64, Medlemskab: [Aktiv], Kontingent: 1200, Disciplin: Crawl
+ID: 124, Navn: hf sdjfv, Køn: kfvk, Alder: 12, Medlemskab: [Aktiv], Kontingent: 0, Disciplin: Crawl
+ID: 26188398, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 61474346, Navn: Jacob Gram, Køn: Mand, Alder: 23, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 85986098, Navn: Mette Frederiksen, Køn: Kvinde, Alder: 45, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 28985049, Navn: Adam Aboudi, Køn: Mand, Alder: 14, Medlemskab: [Aktiv], Kontingent: 1000, , Kontingent: [Betalt]
+ID: 48484848, Navn: Klaus Jensen, Køn: Mand, Alder: 69, Medlemskab: [Aktiv], Kontingent: 1200, , Kontingent: [Betalt]
+ID: 94994376, Navn: Preben Lundin, Køn: Mand, Alder: 58, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 64576285, Navn: Jeniffer Lopez, Køn: Kvinde, Alder: 53, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 68752957, Navn: Ulrik Lehun, Køn: Mand, Alder: 22, Medlemskab: [Passiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 26429712, Navn: Frederik Wessel, Køn: Mand, Alder: 24, Medlemskab: [Passiv], Kontingent: 500, , Kontingent: [Betalt]
+ID: 29282754, Navn: Christian Lorenzen, Køn: Mand, Alder: 29, Medlemskab: [Aktiv], Kontingent: 1600, , Kontingent: [Betalt]
+ID: 22975312, Navn: Morten Olsen, Køn: Kvinde, Alder: 64, Medlemskab: [Aktiv], Kontingent: 1200, Disciplin: Crawl
+ID: 124, Navn: hf sdjfv, Køn: kfvk, Alder: 12, Medlemskab: [Aktiv], Kontingent: 0, Disciplin: Crawl

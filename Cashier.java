@@ -8,7 +8,7 @@ public class Cashier
     // Hvem der har betal og ikke betalt ()
     // Gøre folk passive (Done)
     // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
-    private ArrayList<Member> debtList = new ArrayList<>();
+    private final ArrayList<Member> debtList = new ArrayList<>();
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
@@ -17,9 +17,10 @@ public class Cashier
     Registration registration = new Registration();
 
 
+
     public void cashierMenu()
     {
-        while ( sentinel )
+        while (sentinel)
         {
             System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
             System.out.println("----------------------------------------------------------");
@@ -29,52 +30,45 @@ public class Cashier
             System.out.println("| 4 | Slet Medlem");
             System.out.println("| 0 | Gå Tilbage");
             System.out.println("----------------------------------------------------------");
-
             try
             {
                 int tal = scan.nextInt();
                 if ( tal == 1 )
                 {
                     System.out.println("Printer Kontigent Priser....");
-                    member.sleep();
+                    //member.sleep();
                     subcribtionPrices();
-                    member.sleep();
+                    //member.sleep();
 
-                }
-                else if ( tal == 2 )
+                } else if ( tal == 2 )
                 {
-                        deficitCheck();
-                }
-                 else if ( tal == 3 )
+                    deficitCheck();
+                } else if ( tal == 3 )
                 {
-                        System.out.println("Printer Restance Liste....");
-                        member.sleep();
-                        member.sleep();
-                        seeDeficit();
-                }
-                else if ( tal == 4 )
+                    System.out.println("Printer Restance Liste....");
+                    //member.sleep();
+                    //member.sleep();
+                    seeDeficit();
+                } else if ( tal == 4 )
                 {
                     deleteMember();
 
-                }
-                else if ( tal == 0 )
+                } else if ( tal == 0 )
                 {
                     System.out.println("Går Tilbage...");
-                    member.sleep();
-                    menu.menuLoop();
+                    //member.sleep();
+                    Menu.menuLoop();
                     sentinel = false;
 
-                }
-                else
+                } else
                 {
                     System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                    member.sleep();
+                    //member.sleep();
                 }
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                member.sleep();
+                //member.sleep();
                 scan.next();
             }
 
@@ -84,17 +78,17 @@ public class Cashier
 
     public void deficitCheck()
     {
-        if (member.getDebt() < 0)
+        if ( member.getDebt() < 0 )
         {
             debtList.add(member);
             System.out.println("Medlem tilføjet til restance liste");
-        }
-        else
+        } else
         {
             System.out.println("Alle medlemmer har betalt, derfor ingen tilføjet)");
         }
     }
-// Ikke done
+
+    // Ikke done
     public void editDebt()
     {
         int input = scan.nextInt();
@@ -106,7 +100,7 @@ public class Cashier
     {
         for ( Member member1 : debtList )
         {
-            if (member1.getDebt() <= 0)
+            if ( member1.getDebt() <= 0 )
             {
                 debtList.remove(member1);
                 System.out.println("Medlem fjernet fra restance liste");
@@ -154,11 +148,10 @@ public class Cashier
                     debtList.remove(member3);
                 }
             }
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             System.out.println("Ugyldigt input, prov igen med et nummer");
-            member.sleep();
+            //member.sleep();
             scan.next();
         }
 

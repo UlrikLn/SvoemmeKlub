@@ -43,7 +43,7 @@ public class Competitor extends Member
     // Override
     public String toString()
     {
-        if(getMembershipActive() == true)
+        if ( getMembershipActive() )
         {
             String subs = "dummy";
             if ( getSubscription() == 0 )
@@ -55,7 +55,7 @@ public class Competitor extends Member
             }
         }
         return "ID: " + getId() + ", Navn: " + getFullName() + ", Køn: " + getGender() +
-                ", Alder: " + getAge() +  ", Medlemskab: [Aktiv]" + ", Kontingent: " + getSubscription() + ", Disciplin: " + swimmingDisciplines;
+                ", Alder: " + getAge() + ", Medlemskab: [Aktiv]" + ", Kontingent: " + getSubscription() + ", Disciplin: " + swimmingDisciplines;
     }
 
 

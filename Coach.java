@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.*;
+
 public class Coach
 {
 /*Indsætte scanner og alle valgmulighederne træneren skal kunne  ()
@@ -15,6 +16,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
     Menu menu = new Menu();
+
     public void coachMenu()
     {
         while ( sentinel )
@@ -72,9 +74,9 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
                 } else if ( tal == 0 )
                 {
                     member.sleep();
-                    menu.menuLoop();
+                    Menu.menuLoop();
                     sentinel = false;
-                    System.out.println("Lukker programmet");
+                    System.out.println("Går Tilbage...");
                 } else
                 {
                     System.out.println("Ugyldigt tal, prov igen med et tal fra 0 - 9");
@@ -91,40 +93,51 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     }
 
 
-        public void assignTrainingResultsJunior(Teams teams)
+    /*public void assignTrainingResultsJunior()
+    {
+        try
         {
             Scanner scan = new Scanner(System.in);
-            System.out.print("Svømmerens navn: ");
-            String navn = scan.nextLine();
+            System.out.print("Svømmerens telefonnummer: ");
+            int choice = scan.nextLine();
             System.out.print("Svømmerens tid: ");
             double time = scan.nextDouble();
-            for (int i = 0; i < teams.getJuniorTeam().size(); i++)
+
+            for ( Member pop : registration.memberList )
             {
-                if (navn.equals(teams.getJuniorTeam().get(i).getFullName()))
+                if ( pop.getId() == choice )
                 {
-                    teams.getJuniorTeam().get(i).setTrainingResult(time);
-                    break;
+                    registration.memberList.printfill + time;
                 }
             }
         }
-
-        public void assignTrainingResultsSenior(Teams teams)
+        catch (Exception e)
         {
-            Scanner scan = new Scanner(System.in);
-            System.out.print("Svømmerens navn: ");
-            String navn = scan.nextLine();
-            System.out.print("Svømmerens tid: ");
-            double time = scan.nextDouble();
-            for (int i = 0; i < teams.getSeniorTeam().size(); i++)
+            System.out.println("Ugyldigt input, prov igen med et nummer");
+            member.sleep();
+            scan.next();
+        }
+    }
+
+
+
+    public void assignTrainingResultsSenior(Teams teams)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Svømmerens navn: ");
+        String navn = scan.nextLine();
+        System.out.print("Svømmerens tid: ");
+        double time = scan.nextDouble();
+        for ( int i = 0; i < teams.getSeniorTeam().size(); i++ )
+        {
+            if ( navn.equals(teams.getSeniorTeam().get(i).getFullName()) )
             {
-                if (navn.equals(teams.getSeniorTeam().get(i).getFullName()))
-                {
-                    teams.getSeniorTeam().get(i).setTrainingResult(time);
-                    break;
-                }
+                teams.getSeniorTeam().get(i).setTrainingResult(time);
+                break;
             }
         }
-
+    }
+*/
   /*
   //Disse metoder kunne vi ikke nå at få til at virke...
   public void udtagSvømmereTilKonkurrence(Hold hold) {

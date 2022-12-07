@@ -1,6 +1,7 @@
 import java.text.*;
 import java.util.*;
 import java.io.*;
+
 public class Member
 {
     private int id = -99;
@@ -18,14 +19,13 @@ public class Member
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
 
 
-
     public Member()
     {
 
     }
 
     // Constructors
-    public Member (int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt)
+    public Member(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt)
     {
         this.id = id;
         this.gender = gender;
@@ -37,7 +37,6 @@ public class Member
         this.membershipActive = membershipActive;
         this.debt = debt;
     }
-
 
 
     // Getters
@@ -121,31 +120,28 @@ public class Member
 
     public String toString()
     {
-        if(getMembershipActive() == true)
+        if ( getMembershipActive() )
         {
             String subs = "dummy";
-            if (getDebt() == 0)
+            if ( getDebt() == 0 )
             {
                 subs = ", Kontingent: [Betalt]";
-            }
-            else if (getDebt() > 0)
+            } else if ( getDebt() > 0 )
             {
-                subs =  ", Kontingent: [Ikke Betalt]";
+                subs = ", Kontingent: [Ikke Betalt]";
             }
             return "ID: " + id + ", Navn: " + firstName + " " + surname + ", Køn: " + gender +
                     ", Alder: " + age + ", Medlemskab: [Aktiv]" + ", Kontingent: " + subscription + ", " + subs;
 
-        }
-        else
+        } else
         {
             String subs = "dummy";
-            if (getDebt() == 0)
+            if ( getDebt() == 0 )
             {
                 subs = ", Kontingent: [Betalt]";
-            }
-            else if (getDebt() > 0)
+            } else if ( getDebt() > 0 )
             {
-                subs =  ", Kontingent: [Ikke Betalt]";
+                subs = ", Kontingent: [Ikke Betalt]";
             }
             return "ID: " + id + ", Navn: " + firstName + " " + surname + ", Køn: " + gender +
                     ", Alder: " + age + ", Medlemskab: [Passiv]" + ", Kontingent: " + subscription + ", " + subs;
@@ -154,6 +150,7 @@ public class Member
         }
 
     }
+
     public void whatSubcription(Member member)
     {
         /*if (membershipActive == true)
@@ -187,13 +184,12 @@ public class Member
         try
         {
             Thread.sleep(900);
-        }
-        catch (InterruptedException d)
+        } catch (InterruptedException d)
         {
             System.out.println("Fejl: " + d);
         }
     }
 
 
-    
+
 }
