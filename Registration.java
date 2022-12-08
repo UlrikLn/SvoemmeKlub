@@ -7,14 +7,10 @@ public class Registration
 
     //File fMembers = new File("members.txt");
     Scanner scan = new Scanner(System.in);
-<<<<<<< Updated upstream
     boolean sentinel = true;
-=======
-    Desktop desktop = Desktop.getDesktop();
-    Member member = new Member();
-    Teams team = new Teams();
->>>>>>> Stashed changes
 
+    Member member;
+    Teams teams;
 
     public void registerMember(Member member) throws Exception
     {
@@ -81,7 +77,7 @@ public class Registration
             int debt = 0;
             int subscription = 0;
             double trainingResult = 0;
-            String tournament = "Ingen"
+            String tournament = "Ingen";
             int placement = 0;
             double tournamentTime = 0;
 
@@ -120,14 +116,14 @@ public class Registration
         memberList.add(new Member(26188398, "Mand", "Ulrik", "Lehun", 22, 1600, "Competitor", true, 0));
         memberList.add(new Member(61474346, "Mand", "Jacob", "Gram", 23, 1600, "Competitor", true, 0));
         memberList.add(new Member(85986098, "Kvinde", "Mette", "Frederiksen", 45, 500, "Passive", false, 0));
-        memberList.add(new Member(28985049, "Mand", "Adam", "Aboudi", 14, 1000, "Competitor", true, 0));
+        memberList.add(new Member(28985049, "Mand", "Adam", "Aboudi", 14, 1000, "Competitor", true, 200));
         memberList.add(new Member(48484848, "Mand", "Klaus", "Jensen", 69, 1200, "Motionist", true, 0));
-        memberList.add(new Member(94994376, "Mand", "Preben", "Lundin", 58, 1600, "Motionist", true, 0));
+        memberList.add(new Member(94994376, "Mand", "Preben", "Lundin", 58, 1600, "Motionist", true, 200));
         memberList.add(new Member(64576285, "Kvinde", "Jeniffer", "Lopez", 53, 1600, "Motionist", true, 0));
         memberList.add(new Member(68752957, "Mand", "Ulrik", "Lehun", 22, 1600, "Passive", false, 0));
         memberList.add(new Member(26429712, "Mand", "Frederik", "Wessel", 24, 500, "Passive", false, 0));
         memberList.add(new Member(29282754, "Mand", "Christian", "Lorenzen", 29, 1600, "Competitor", true, 0));
-        //memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02, "Crawl","Skjern",1));
+        memberList.add(new Competitor(22, "Kvinde", "Morten", "Olsen", 15, 1200, "Competitor", true, 0, 12.02, "Crawl","Skjern",1, 2.888));
     }
 
     public void seeList() throws Exception
@@ -174,11 +170,15 @@ public class Registration
             System.out.println("Indtast medlems id: ");
             int choice = scan.nextInt();
 
-            for (int i = 0; i < memberList.size(); i++)
+            for (int i = 0; i < teams.getJuniorTeam().size(); i++)
             {
-                if (memberList.get(i).getId() == choice)
+                if (teams.getJuniorTeam().get(i).getId() == choice)
                 {
-                    memberList.remove(i);
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Konkurrence tid: ");
+                    double prut = sc.nextInt();
+
+                    teams.getJuniorTeam().get(i).setTournamentTime(prut);
                 }
             }
         }catch (Exception e)
@@ -186,6 +186,7 @@ public class Registration
             System.out.println("Ugyldigt input, prov igen med et nummer");
             scan.next();
         }
+
     }
 
     /*public void fileWrite() throws Exception

@@ -10,7 +10,7 @@ public class Cashier
     // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
     public  ArrayList<Member> debtList = new ArrayList<>();
     boolean sentinel = true;
-    Scanner scan = new Scanner(System.in);
+    Scanner newScanner = new Scanner(System.in);
     Member member;
     Registration registration;
     Menu menu;
@@ -31,7 +31,7 @@ public class Cashier
             System.out.println("----------------------------------------------------------");
             try
             {
-                int tal = scan.nextInt();
+                int tal = newScanner.nextInt();
                 if ( tal == 1 )
                 {
                     System.out.println("Printer Kontigent Priser....");
@@ -64,7 +64,7 @@ public class Cashier
             } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                scan.next();
+                newScanner.next();
             }
 
 
