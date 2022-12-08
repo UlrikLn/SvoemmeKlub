@@ -17,7 +17,7 @@ public class Menu
     public static void menuLoop()
     {
         Teams team = new Teams();
-        Coach coach = new Coach();
+        Coach coach = new Coach(team);
         Member member = new Member();
         Scanner scan = new Scanner(System.in);
         boolean sentinel = true;

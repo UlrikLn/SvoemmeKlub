@@ -20,6 +20,11 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     Teams teams;
     Competitor competitor;
 
+    public Coach(Teams team)
+    {
+        this.teams = team;
+    }
+
     public void coachMenu()
     {
         while ( sentinel )
@@ -67,17 +72,15 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
                 } else if ( tal == 5 )
                 {
-                    teams.getJuniorTeam();
-                    sentinel = false;
-                    System.out.println("Åbner 5");
                     System.out.println("Her kan du se en oversigt over Junior medlemmer");
+                    teams.sortJuniorTime();
+                    teams.seeListJunior();
 
                 } else if ( tal == 6 )
                 {
-                    teams.getJuniorTeam();
-                    sentinel = false;
-                    System.out.println("Åbner 6");
                     System.out.println("Her kan du se en oversigt over Senior medlemmer");
+                    teams.sortSeniorTime();
+                    teams.seeListSenior();
 
                 } else if ( tal == 0 )
                 {
@@ -175,7 +178,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             System.out.println("Placering: ");
             int place = scan.nextInt();
             System.out.print("Konkurrencetid: ");
-            double ktid = scan.nextDouble();
+            int ktid = scan.nextInt();
             for ( int i = 0; i < teams.getJuniorTeam().size(); i++ )
             {
                 if ( teams.getJuniorTeam().get(i).getId() == choice )
@@ -215,7 +218,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             System.out.print("Placering: ");
             int place = scan.nextInt();
             System.out.print("Konkurrencetid: ");
-            double ktid = scan.nextDouble();
+            int ktid = scan.nextInt();
             for ( int i = 0; i < teams.getSeniorTeam().size(); i++ )
             {
                 if ( teams.getSeniorTeam().get(i).getId() == choice )

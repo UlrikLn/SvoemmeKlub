@@ -5,15 +5,15 @@ import java.util.*;
 
 public class Competitor extends Member
 {
-    private double trainingResult;
+    private int trainingResult;
     private String swimmingDisciplines;
     private String tournament = "Ingen";
     private int placement = 0;
-    private double tournamentTime = 0;
+    private int tournamentTime = 0;
 
     Teams teams;
 
-    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, int trainingResult, String swimmingDisciplines, String tournament, int placement, double tournamentTime)
+    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, int trainingResult, String swimmingDisciplines, String tournament, int placement, int tournamentTime)
     {
         super(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
@@ -50,14 +50,14 @@ public class Competitor extends Member
         this.placement = placement;
     }
 
-    public void setTournamentTime(double tournamentTime)
+    public void setTournamentTime(int tournamentTime)
     {
         this.tournamentTime = tournamentTime;
     }
 
     // Getters
 
-    public double getTrainingResult(int trainingResult)
+    public int getTrainingResult()
     {
         return trainingResult;
     }
@@ -77,7 +77,7 @@ public class Competitor extends Member
         return placement;
     }
 
-    public double getTournamentTime(double tournamentTime)
+    public int getTournamentTime(int tournamentTime)
     {
         return tournamentTime;
     }

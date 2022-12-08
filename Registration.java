@@ -88,7 +88,7 @@ public class Registration
             int trainingResult = 0;
             String tournament = "Ingen";
             int placement = 0;
-            double tournamentTime = 0;
+            int tournamentTime = 0;
 
 
             Competitor competitor = new Competitor(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt, trainingResult, swimmingDisciplines, tournament, placement, tournamentTime);
@@ -140,7 +140,7 @@ public class Registration
         Collections.sort(memberList, Comparator.comparing(Member::getMemberType));
     }
 
-    public void seeList() throws Exception
+    public void seeList()
     {
         for ( Member value : memberList )
         {
@@ -149,6 +149,7 @@ public class Registration
         }
 
     }
+
 
     public void deleteMember(Cashier cashier)
     {
@@ -180,25 +181,111 @@ public class Registration
 
     public void editMember()
     {
-        try
+        while (sentinel)
         {
-            System.out.println("Indtast medlems id: ");
-            int choice = scan.nextInt();
-
-            for (int i = 0; i < team.getJuniorTeam().size(); i++)
+            System.out.println("Vælg et tal fra 0-5 for at åbne funktioner:");
+            System.out.println("----------------------------------------------------------");
+            System.out.println("| 1 | Indtast Junior Konkurrence Stats ");
+            System.out.println("| 2 | Indtast Senior Konkurrence Stats ");
+            System.out.println("| 3 | Ændre medlems restance");
+            System.out.println("| 4 | Ændre trænings resultat hos Junior ");
+            System.out.println("| 5 | Ændre trænings resultat hos Junior ");
+            System.out.println("| 0 | Gå Tilbage");
+            System.out.println("----------------------------------------------------------");
+            try
             {
-                if (team.getJuniorTeam().get(i).getId() == choice)
+                int tal = scan.nextInt();
+                System.out.println("Indtast medlems id: ");
+                int choice = scan.nextInt();
+                if ( tal == 1 )
                 {
-                    Scanner sc = new Scanner(System.in);
-                    System.out.println("Indtast det nye tid");
-                    int prut = sc.nextInt();
-                    team.getJuniorTeam().get(i).setTournamentTime(prut);
+                    for (int i = 0; i < team.getJuniorTeam().size(); i++)
+                    {
+                        if (team.getJuniorTeam().get(i).getId() == choice)
+                        {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Indtast stævne: ");
+                            String meet = sc.nextLine();
+                            System.out.println("Indtast tid");
+                            int time = sc.nextInt();
+                            System.out.println("Indtast placering");
+                            int placement = sc.nextInt();
+                            team.getJuniorTeam().get(i).setTournamentTime(time);
+                            team.getJuniorTeam().get(i).setTournament(meet);
+                            team.getJuniorTeam().get(i).setPlacement(placement);
+                            break;
+                        }
+                    }
+                } else if ( tal == 2 )
+                {
+                    for (int i = 0; i < team.getSeniorTeam().size(); i++)
+                    {
+                        if (team.getSeniorTeam().get(i).getId() == choice)
+                        {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Indtast stævne: ");
+                            String meet = sc.nextLine();
+                            System.out.println("Indtast tid");
+                            int time = sc.nextInt();
+                            System.out.println("Indtast placering");
+                            int placement = sc.nextInt();
+                            team.getJuniorTeam().get(i).setTournamentTime(time);
+                            team.getJuniorTeam().get(i).setTournament(meet);
+                            team.getJuniorTeam().get(i).setPlacement(placement);
+                            break;
+                        }
+                    }
+
+                } else if ( tal == 3 )
+                {
+                    for (int i = 0; i < memberList.size(); i++)
+                    {
+                        if (memberList.get(i).getId() == choice)
+                        {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Indtast restance: ");
+                            int debt = sc.nextInt();
+                            memberList.get(i).setDebt(debt);
+                            break;
+                        }
+                    }
+                } else if ( tal == 4 ) {
+                    for (int i = 0; i < team.getJuniorTeam().size(); i++) {
+                        if (team.getJuniorTeam().get(i).getId() == choice) {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Indtast restance: ");
+                            int training = sc.nextInt();
+                            team.getJuniorTeam().get(i).setTrainingResult(training);
+                        }
+                    }
+                }else if ( tal == 5 )
+                {
+                    for (int i = 0; i < team.getSeniorTeam().size(); i++)
+                    {
+                        if (team.getSeniorTeam().get(i).getId() == choice)
+                        {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("Indtast restance: ");
+                            int training = sc.nextInt();
+                            team.getSeniorTeam().get(i).setTrainingResult(training);
+                        }
+                    }
+                } else if ( tal == 0 )
+                {
+                    System.out.println("Går Tilbage...");
+                    Menu.menuLoop();
+                    sentinel = false;
+                } else
+                {
+                    System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 5");
                 }
+            } catch (Exception e)
+            {
+                System.out.println("Fejl");
+                scan.next();
             }
-        }catch (Exception e)
-        {
-            System.out.println("Ugyldigt input, prov igen");
-            scan.next();
+
+
         }
     }
 
