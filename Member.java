@@ -16,12 +16,8 @@ public class Member
     private boolean membershipActive = true;
     private int debt = 0;
 
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
-
-
     public Member()
     {
-
     }
 
     // Constructors

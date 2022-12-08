@@ -16,8 +16,8 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
-    Menu menu = new Menu();
     Teams teams = new Teams();
+
 
     public void coachMenu()
     {
@@ -156,7 +156,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
     }
 
-  /*
+/*
   //Disse metoder kunne vi ikke nå at få til at virke...
   public void udtagSvømmereTilKonkurrence(Hold hold) {
     int minimumsKrav = 10; //hard coded adgangskrav til vores egen hjemmelavede konkurrence.

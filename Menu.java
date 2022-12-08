@@ -22,7 +22,6 @@ public class Menu
         Scanner scan = new Scanner(System.in);
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
-        Member member = new Member();
         Registration registration = new Registration();
         File memberFile = new File("members.txt");
         registration.newMember();

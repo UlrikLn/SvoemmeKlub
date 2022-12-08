@@ -9,12 +9,11 @@ public class Cashier
     // Gøre folk passive (Done)
     // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
     public  ArrayList<Member> debtList = new ArrayList<>();
+
+    Registration registration = new Registration();
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
-
-    Menu menu = new Menu();
-    Registration registration = new Registration();
 
 
 
@@ -37,18 +36,18 @@ public class Cashier
                 {
                     System.out.println("Printer Kontigent Priser....");
                     //member.sleep();
-                    //subcribtionPrices();
+                    subcribtionPrices();
                     //member.sleep();
 
                 } else if ( tal == 2 )
                 {
-                    //deficitAddToList();
+                    deficitAddToList();
                 } else if ( tal == 3 )
                 {
                     System.out.println("Printer Restance Liste....");
                     //member.sleep();
                     //member.sleep();
-                    //seeDeficit();
+                    seeDeficit();
                 } else if ( tal == 4 )
                 {
                     registration.deleteMember();
@@ -76,7 +75,7 @@ public class Cashier
         }
     }
 
-/*
+
     public void deficitAddToList()
     {
         for (int i = 0; i < registration.memberList.size(); i++)
@@ -130,5 +129,5 @@ public class Cashier
             System.out.println(member1);
         }
     }
-*/
+
 }

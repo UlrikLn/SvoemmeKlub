@@ -10,11 +10,9 @@ public class Registration
     File fMembers = new File("members.txt");
     Scanner scan = new Scanner(System.in);
     Desktop desktop = Desktop.getDesktop();
-    boolean sentinel = true;
+    Cashier cashier = new Cashier();
     Member member = new Member();
     Teams team = new Teams();
-    Coach coach = new Coach();
-    Cashier cashier = new Cashier();
 
     public void registerMember() throws Exception
     {
