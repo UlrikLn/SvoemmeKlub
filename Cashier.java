@@ -37,18 +37,18 @@ public class Cashier
                 {
                     System.out.println("Printer Kontigent Priser....");
                     //member.sleep();
-                    subcribtionPrices();
+                    //subcribtionPrices();
                     //member.sleep();
 
                 } else if ( tal == 2 )
                 {
-                    deficitCheck();
+                    //deficitAddToList();
                 } else if ( tal == 3 )
                 {
                     System.out.println("Printer Restance Liste....");
                     //member.sleep();
                     //member.sleep();
-                    seeDeficit();
+                    //seeDeficit();
                 } else if ( tal == 4 )
                 {
                     registration.deleteMember();
@@ -76,15 +76,20 @@ public class Cashier
         }
     }
 
-    public void deficitCheck()
+/*
+    public void deficitAddToList()
     {
-        if ( member.getDebt() < 0 )
+        for (int i = 0; i < registration.memberList.size(); i++)
         {
-            debtList.add(member);
-            System.out.println("Medlem tilføjet til restance liste");
-        } else
-        {
-            System.out.println("Alle medlemmer har betalt, derfor ingen tilføjet)");
+            if(registration.memberList.get(i).getDebt() < 0)
+            {
+                //Ved ikke om det virker, måske skal member erstattes med i??
+                debtList.add(member);
+                System.out.println("Medlem tilføjet til restance liste");
+            }
+            {
+                System.out.println("Alle medlemmer har betalt, derfor ingen tilføjet)");
+            }
         }
     }
 
@@ -125,5 +130,5 @@ public class Cashier
             System.out.println(member1);
         }
     }
-
+*/
 }

@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.*;
 
@@ -16,6 +17,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     Scanner scan = new Scanner(System.in);
     Member member = new Member();
     Menu menu = new Menu();
+    Teams teams = new Teams();
 
     public void coachMenu()
     {
@@ -93,21 +95,24 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
     }
 
 
-    /*public void assignTrainingResultsJunior()
+    public void assignTrainingResultsJunior()
     {
         try
         {
             Scanner scan = new Scanner(System.in);
             System.out.print("Svømmerens telefonnummer: ");
-            int choice = scan.nextLine();
+            int choice = scan.nextInt();
             System.out.print("Svømmerens tid: ");
             double time = scan.nextDouble();
-
-            for ( Member pop : registration.memberList )
+            for ( int i = 0; i < teams.getJuniorTeam().size(); i++ )
             {
-                if ( pop.getId() == choice )
+                if ( teams.getJuniorTeam().get(i).getId() == choice )
                 {
-                    registration.memberList.printfill + time;
+                    teams.getJuniorTeam().get(i).setTrainingResult(time);
+                    System.out.println("Tilføjet trænings tid til medlem: " + teams.getJuniorTeam().get(i).getFullName());
+                } else
+                {
+                    System.out.println("Intet medlem fundet med id'et indtastet");
                 }
             }
         }
@@ -121,23 +126,36 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
 
 
-    public void assignTrainingResultsSenior(Teams teams)
+    public void assignTrainingResultsSenior()
     {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Svømmerens navn: ");
-        String navn = scan.nextLine();
-        System.out.print("Svømmerens tid: ");
-        double time = scan.nextDouble();
-        for ( int i = 0; i < teams.getSeniorTeam().size(); i++ )
+        try
         {
-            if ( navn.equals(teams.getSeniorTeam().get(i).getFullName()) )
+            Scanner scan = new Scanner(System.in);
+            System.out.print("Svømmerens telefonnummer: ");
+            int choice = scan.nextInt();
+            System.out.print("Svømmerens tid: ");
+            double time = scan.nextDouble();
+            for ( int i = 0; i < teams.getSeniorTeam().size(); i++ )
             {
-                teams.getSeniorTeam().get(i).setTrainingResult(time);
-                break;
+                if ( teams.getSeniorTeam().get(i).getId() == choice )
+                {
+                    teams.getSeniorTeam().get(i).setTrainingResult(time);
+                    System.out.println("Tilføjet trænings tid til medlem: " + teams.getSeniorTeam().get(i).getFullName());
+                } else
+                {
+                    System.out.println("Intet medlem fundet med id'et indtastet");
+                }
             }
         }
+        catch (Exception e)
+        {
+            System.out.println("Ugyldigt input, prov igen med et nummer");
+            member.sleep();
+            scan.next();
+        }
+
     }
-*/
+
   /*
   //Disse metoder kunne vi ikke nå at få til at virke...
   public void udtagSvømmereTilKonkurrence(Hold hold) {

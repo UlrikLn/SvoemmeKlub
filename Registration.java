@@ -185,9 +185,10 @@ public class Registration
         {
             FileWriter fw = new FileWriter("members.txt", true);
             Writer output = new BufferedWriter(fw);
-            for (int i = 0; i<memberList.size(); i++)
+
+            for (int i = 0; i<1; i++)
             {
-                output.write(memberList.get(i).toString() + "\n");
+                output.write(memberList.get(memberList.size() -1).toString() + "\n");
             }
             output.close();
             System.out.println("Person er arkiveret i databasen");
