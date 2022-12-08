@@ -15,10 +15,16 @@ public class Cashier
     Registration registration;
     Menu menu;
 
+    public Cashier(Registration registration)
+    {
+        this.registration = registration;
+    }
 
 
     public void cashierMenu()
     {
+        debtList.add(new Member(4, "Kvinde", "Lotte", "Lehun", 22, 1600, "Competitor", true, 2000));
+
         while (sentinel)
         {
             System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
@@ -41,7 +47,8 @@ public class Cashier
 
                 } else if ( tal == 2 )
                 {
-                    deficitAddToList(registration);
+                    deficitAddToList();
+
                 } else if ( tal == 3 )
                 {
                     System.out.println("Printer Restance Liste....");
@@ -72,7 +79,7 @@ public class Cashier
     }
 
 
-   public void deficitAddToList(Registration registration)
+   public void deficitAddToList()
     {
         for (int i = 0; i < registration.memberList.size(); i++)
         {

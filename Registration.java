@@ -11,8 +11,9 @@ public class Registration
 
     boolean sentinel = true;
     Desktop desktop = Desktop.getDesktop();
-    Member member = new Member();
-    Teams team = new Teams();
+    Member member;
+    Teams team;
+
 
     public void registerMember(Member member) throws Exception
     {
@@ -74,11 +75,12 @@ public class Registration
             int age = scan.nextInt();
             System.out.print("Telefonnummer: ");
             int id = scan.nextInt();
-            String swimmingDisciplines = Teams.selectDiscipline();
+            Teams teams = new Teams();
+            String swimmingDisciplines = teams.selectDiscipline();
             boolean membershipActive = true;
             int debt = 0;
             int subscription = 0;
-            double trainingResult = 0;
+            int trainingResult = 0;
             String tournament = "Ingen";
             int placement = 0;
             double tournamentTime = 0;
@@ -87,7 +89,7 @@ public class Registration
             Competitor competitor = new Competitor(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt, trainingResult, swimmingDisciplines, tournament, placement, tournamentTime);
             if ( age < 18 )
             {
-                //team.addJuniorCompetitor(competitor);
+                team.addJuniorCompetitor(competitor);
                 System.out.println("Medlemmet er konkurrencesvømmer i kategorien juniormedlem, og dermed tildelt ungdomsholdet.");
                 subscription = 1000;
                 System.out.println("Junior medlemsskab (pris: " + subscription + "kr.)");
@@ -96,7 +98,7 @@ public class Registration
                 subscription = 1600;
                 System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
                 System.out.println("Senior medlemsskab (pris: " + subscription + "kr.)");
-                //team.addSeniorCompetitor(competitor);
+                team.addSeniorCompetitor(competitor);
             } else if ( age > 60 )
             {
                 System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
@@ -130,7 +132,7 @@ public class Registration
 
     public void sort()
     {
-        Collections.sort(memberList, Comparator.comparing(Member::getFirstName));
+        Collections.sort(memberList, Comparator.comparing(Member::getMemberType));
     }
 
     public void seeList() throws Exception
@@ -140,6 +142,7 @@ public class Registration
             System.out.println(value);
 
         }
+
     }
 
     public void deleteMember(Cashier cashier)
@@ -177,13 +180,14 @@ public class Registration
             System.out.println("Indtast medlems id: ");
             int choice = scan.nextInt();
 
-            for (int i = 0; i < memberList.size(); i++)
+            for (int i = 0; i < team.getJuniorTeam().size(); i++)
             {
-                if (memberList.get(i).getId() == choice)
+                if (team.getJuniorTeam().get(i).getId() == choice)
                 {
-                    System.out.println("Indtast det nye navn");
-                    String prut = scan.nextLine();
-                    memberList.get(i).setName(prut);
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Indtast det nye tid");
+                    Double prut = sc.nextDouble();
+                    team.getJuniorTeam().get(i).setTournamentTime(prut);
                 }
             }
         }catch (Exception e)

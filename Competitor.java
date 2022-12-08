@@ -11,6 +11,8 @@ public class Competitor extends Member
     private int placement = 0;
     private double tournamentTime = 0;
 
+    Teams teams;
+
     public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines, String tournament, int placement, double tournamentTime)
     {
         super(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt);
@@ -75,7 +77,7 @@ public class Competitor extends Member
         return placement;
     }
 
-    public int getTournamentTime(int tournamentTime)
+    public double getTournamentTime(double tournamentTime)
     {
         return tournamentTime;
     }
@@ -98,6 +100,4 @@ public class Competitor extends Member
         return "ID: " + getId() + ", Navn: " + getFullName() + ", Køn: " + getGender() +
                 ", Alder: " + getAge() + ", Medlemskab: [Aktiv]" + ", Disciplin: " + swimmingDisciplines + ", Træningstid: " + trainingResult + ", Stævne: " + tournament + ", Placering: " + placement + ", Konkurrencetid: " + tournamentTime;
     }
-
-
 }

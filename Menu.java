@@ -17,7 +17,6 @@ public class Menu
     public static void menuLoop()
     {
         Teams team = new Teams();
-        Cashier cashier = new Cashier();
         Coach coach = new Coach();
         Member member = new Member();
         Scanner scan = new Scanner(System.in);
@@ -26,6 +25,9 @@ public class Menu
         Registration registration = new Registration();
         File memberFile = new File("members.txt");
         registration.newMember();
+        Cashier cashier = new Cashier(registration);
+        team.newTeams();
+
 
         while ( sentinel )
         {

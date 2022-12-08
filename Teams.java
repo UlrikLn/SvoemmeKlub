@@ -2,9 +2,8 @@ import java.util.*;
 
 public class Teams
 {
-
-    private final ArrayList<Competitor> juniorTeam = new ArrayList<>();
-    private final ArrayList<Competitor> seniorTeam = new ArrayList<>();
+    private ArrayList<Competitor> juniorTeam = new ArrayList<>();
+    private ArrayList<Competitor> seniorTeam = new ArrayList<>();
 
     public void addJuniorCompetitor(Competitor competitor)
     {
@@ -26,9 +25,17 @@ public class Teams
         return juniorTeam;
     }
 
+    public void newTeams()
+    {
+        juniorTeam.add(new Competitor(26188398, "Mand", "Ulrik", "Lehun", 15, 1600, "Competitor", true, 0, 13.70, "Crawl", "KBH", 3, 10.0));
+        juniorTeam.add(new Competitor(34563456, "kvind", "Ulrik", "jaja", 13, 1600, "Competitor", true, 0, 7.50, "Crawl", "KBH", 1, 5.67));
+        juniorTeam.add(new Competitor(26188398, "Mand", "Ulrik", "Lehun", 10, 1600, "Competitor", true, 0, 10.10, "Crawl", "KBH", 5, 10.0));
+    }
 
 
-    public static String selectDiscipline()
+
+
+    public String selectDiscipline()
     {
         boolean sentinel = true;
         Scanner scan = new Scanner(System.in);
@@ -75,5 +82,9 @@ public class Teams
         return "svømmer";
     }
 
+    public void sortTime()
+    {
+       // Collections.sort(juniorTeam, Comparator.comparingDouble(Competitor::getTrainingResult));
+    }
 }
 

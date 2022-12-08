@@ -171,11 +171,11 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             System.out.print("Svømmerens telefonnummer: ");
             int choice = scan.nextInt();
             System.out.println("Stævne: ");
-            String tourney = scan.nextLine();
+            String tourney = scan.next();
             System.out.println("Placering: ");
             int place = scan.nextInt();
             System.out.print("Konkurrencetid: ");
-            double ktid = scan.nextInt();
+            double ktid = scan.nextDouble();
             for ( int i = 0; i < teams.getJuniorTeam().size(); i++ )
             {
                 if ( teams.getJuniorTeam().get(i).getId() == choice )
@@ -211,11 +211,11 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             System.out.print("Svømmerens telefonnummer: ");
             int choice = scan.nextInt();
             System.out.print("Stævne: ");
-            String tourney = scan.nextLine();
+            String tourney = scan.next();
             System.out.print("Placering: ");
             int place = scan.nextInt();
             System.out.print("Konkurrencetid: ");
-            int ktid = scan.nextInt();
+            double ktid = scan.nextDouble();
             for ( int i = 0; i < teams.getSeniorTeam().size(); i++ )
             {
                 if ( teams.getSeniorTeam().get(i).getId() == choice )
