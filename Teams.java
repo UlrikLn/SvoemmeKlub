@@ -26,11 +26,12 @@ public class Teams
         return juniorTeam;
     }
 
+
+
     public static String selectDiscipline()
     {
         boolean sentinel = true;
         Scanner scan = new Scanner(System.in);
-        Member member = new Member();
 
         while ( sentinel )
         {
@@ -63,12 +64,10 @@ public class Teams
                 } else
                 {
                     System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                    member.sleep();
                 }
             } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                member.sleep();
                 scan.next();
             }
 

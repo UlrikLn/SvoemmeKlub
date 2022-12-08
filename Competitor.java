@@ -7,12 +7,22 @@ public class Competitor extends Member
 {
     private double trainingResult;
     private String swimmingDisciplines;
+    private String tournament = "Ingen";
+    private int placement = 0;
+    private double tournamentTime = 0;
 
-    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines)
+    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines, String tournament, int placement, double tournamentTime)
     {
         super(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
         this.swimmingDisciplines = swimmingDisciplines;
+        this.tournament = tournament;
+        this.placement = placement;
+        this.tournamentTime = tournamentTime;
+
+
+
+
 
     }
 
@@ -28,6 +38,21 @@ public class Competitor extends Member
         this.swimmingDisciplines = swimmingDisciplines;
     }
 
+    public void setTournament(String tournament)
+    {
+        this.tournament = tournament;
+    }
+
+    public void setPlacement(int placement)
+    {
+        this.placement = placement;
+    }
+
+    public void setTournamentTime(double tournamentTime)
+    {
+        this.tournamentTime = tournamentTime;
+    }
+
     // Getters
 
     public double getTrainingResult(double trainingResult)
@@ -39,6 +64,22 @@ public class Competitor extends Member
     {
         return swimmingDisciplines;
     }
+
+    public String getTournament(String tournament)
+    {
+        return tournament;
+    }
+
+    public int getPlacement(int placement)
+    {
+        return placement;
+    }
+
+    public int getTournamentTime(int tournamentTime)
+    {
+        return tournamentTime;
+    }
+
 
     // Override
     public String toString()
@@ -55,7 +96,7 @@ public class Competitor extends Member
             }
         }
         return "ID: " + getId() + ", Navn: " + getFullName() + ", Køn: " + getGender() +
-                ", Alder: " + getAge() + ", Medlemskab: [Aktiv]" + ", Kontingent: " + getSubscription() + ", Disciplin: " + swimmingDisciplines;
+                ", Alder: " + getAge() + ", Medlemskab: [Aktiv]" + ", Disciplin: " + swimmingDisciplines + ", Træningstid: " + trainingResult + ", Stævne: " + tournament + ", Placering: " + placement + ", Konkurrencetid: " + tournamentTime;
     }
 
 

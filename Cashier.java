@@ -9,11 +9,11 @@ public class Cashier
     // Gøre folk passive (Done)
     // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
     public  ArrayList<Member> debtList = new ArrayList<>();
-
-    Registration registration = new Registration();
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
-    Member member = new Member();
+    Member member;
+    Registration registration;
+    Menu menu;
 
 
 
@@ -41,7 +41,7 @@ public class Cashier
 
                 } else if ( tal == 2 )
                 {
-                    deficitAddToList();
+                    deficitAddToList(registration);
                 } else if ( tal == 3 )
                 {
                     System.out.println("Printer Restance Liste....");
@@ -50,24 +50,20 @@ public class Cashier
                     seeDeficit();
                 } else if ( tal == 4 )
                 {
-                    registration.deleteMember();
 
                 } else if ( tal == 0 )
                 {
                     System.out.println("Går Tilbage...");
-                    //member.sleep();
                     Menu.menuLoop();
                     sentinel = false;
 
                 } else
                 {
                     System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                    //member.sleep();
                 }
             } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                //member.sleep();
                 scan.next();
             }
 
@@ -76,14 +72,14 @@ public class Cashier
     }
 
 
-    public void deficitAddToList()
+   public void deficitAddToList(Registration registration)
     {
         for (int i = 0; i < registration.memberList.size(); i++)
         {
             if(registration.memberList.get(i).getDebt() < 0)
             {
                 //Ved ikke om det virker, måske skal member erstattes med i??
-                debtList.add(member);
+                //debtList.add((Member) registration.memberList.get(i));
                 System.out.println("Medlem tilføjet til restance liste");
             }
             {
@@ -92,13 +88,6 @@ public class Cashier
         }
     }
 
-    // Ikke done
-    public void editDebt()
-    {
-        int input = scan.nextInt();
-
-        member.setDebt(input);
-    }
 
     public void debtListRemove()
     {

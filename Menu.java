@@ -1,7 +1,6 @@
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.File;
+import java.util.*;
+import java.io.*;
 import java.awt.Desktop;
 
 public class Menu
@@ -17,8 +16,10 @@ public class Menu
 
     public static void menuLoop()
     {
+        Teams team = new Teams();
         Cashier cashier = new Cashier();
         Coach coach = new Coach();
+        Member member = new Member();
         Scanner scan = new Scanner(System.in);
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
@@ -45,11 +46,11 @@ public class Menu
                 int tal = scan.nextInt();
                 if ( tal == 1 )
                 {
-                    registration.registerMember();
-                    registration.fileWrite();
+                    registration.registerMember(member);
+
                 } else if ( tal == 2 )
                 {
-                    registration.deleteMember();
+                    registration.deleteMember(cashier);
                 } else if ( tal == 3 )
                 {
                     System.out.println("Ikke færdigt gjordt endnu");
@@ -101,4 +102,5 @@ public class Menu
 
         }
     }
+
 }

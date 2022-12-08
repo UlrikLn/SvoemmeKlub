@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 import java.util.*;
 
@@ -7,35 +5,17 @@ public class Registration
 {
     public ArrayList<Member> memberList = new ArrayList<>();
 
-    File fMembers = new File("members.txt");
+    //File fMembers = new File("members.txt");
     Scanner scan = new Scanner(System.in);
-    Desktop desktop = Desktop.getDesktop();
-    Cashier cashier = new Cashier();
-    Member member = new Member();
-    Teams team = new Teams();
+    boolean sentinel = true;
 
-    public void registerMember() throws Exception
+
+    public void registerMember(Member member) throws Exception
     {
 
         System.out.println("Opret det nye medlem herunder: ");
         System.out.print("Skal det nye medlem registreres som konkurrencesvømmer, 'ja' eller 'nej': ");
         String memberType = scan.nextLine();
-
-      /*System.out.print("Fornavn: ");
-      String firstName = scan.nextLine();
-      System.out.print("Efternavn: ");
-      String surname = scan.nextLine();
-      //System.out.println("Køn ");
-      String gender = scan.nextLine();
-      System.out.print("Alder: ");
-      int age = scan.nextInt();
-      System.out.print("Telefonnummer: ");
-      int id = scan.nextInt();
-      boolean membershipActive = true;
-      int debt = 0;
-      int subscription = 0;
-      double trainingResult = 0;
-      String swimmingDisciplines = "";*/
 
         //Motionist
         if ( memberType.equals("nej") )
@@ -49,7 +29,6 @@ public class Registration
             System.out.print("Alder: ");
             int age = scan.nextInt();
             System.out.print("Telefonnummer: ");
-            int mdma;
             int id = scan.nextInt();
             boolean membershipActive = true;
             int debt = 0;
@@ -71,7 +50,7 @@ public class Registration
                 subscription = 1200;
                 System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
             }
-            fileWrite();
+            //fileWrite();
             System.out.println();
 
 
@@ -91,16 +70,20 @@ public class Registration
             int age = scan.nextInt();
             System.out.print("Telefonnummer: ");
             int id = scan.nextInt();
+            String swimmingDisciplines = Teams.selectDiscipline();
             boolean membershipActive = true;
             int debt = 0;
             int subscription = 0;
             double trainingResult = 0;
-            String swimmingDisciplines = Teams.selectDiscipline();
+            String tournament = "Ingen"
+            int placement = 0;
+            double tournamentTime = 0;
 
-            Competitor competitor = new Competitor(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt, trainingResult, swimmingDisciplines);
+
+            Competitor competitor = new Competitor(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt, trainingResult, swimmingDisciplines, tournament, placement, tournamentTime);
             if ( age < 18 )
             {
-                team.addJuniorCompetitor(competitor);
+                //team.addJuniorCompetitor(competitor);
                 System.out.println("Medlemmet er konkurrencesvømmer i kategorien juniormedlem, og dermed tildelt ungdomsholdet.");
                 subscription = 1000;
                 System.out.println("Junior medlemsskab (pris: " + subscription + "kr.)");
@@ -109,7 +92,7 @@ public class Registration
                 subscription = 1600;
                 System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
                 System.out.println("Senior medlemsskab (pris: " + subscription + "kr.)");
-                team.addSeniorCompetitor(competitor);
+                //team.addSeniorCompetitor(competitor);
             } else if ( age > 60 )
             {
                 System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
@@ -138,7 +121,7 @@ public class Registration
         memberList.add(new Member(68752957, "Mand", "Ulrik", "Lehun", 22, 1600, "Passive", false, 0));
         memberList.add(new Member(26429712, "Mand", "Frederik", "Wessel", 24, 500, "Passive", false, 0));
         memberList.add(new Member(29282754, "Mand", "Christian", "Lorenzen", 29, 1600, "Competitor", true, 0));
-        memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02, "Crawl"));
+        //memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02, "Crawl","Skjern",1));
     }
 
     public void seeList() throws Exception
@@ -150,7 +133,7 @@ public class Registration
         }
     }
 
-    public void deleteMember()
+    public void deleteMember(Cashier cashier)
     {
         try
         {
@@ -178,17 +161,35 @@ public class Registration
         }
     }
 
-    public void fileWrite() throws Exception
+    public void editMember()
+    {
+        try
+        {
+            System.out.println("Indtast medlems id: ");
+            int choice = scan.nextInt();
+
+            for (int i = 0; i < memberList.size(); i++)
+            {
+                if (memberList.get(i).getId() == choice)
+                {
+                    memberList.remove(i);
+                }
+            }
+        }catch (Exception e)
+        {
+            System.out.println("Ugyldigt input, prov igen med et nummer");
+            scan.next();
+        }
+    }
+
+    /*public void fileWrite() throws Exception
     {
         try
         {
             FileWriter fw = new FileWriter("members.txt", true);
             Writer output = new BufferedWriter(fw);
 
-            for (int i = 0; i<1; i++)
-            {
-                output.write(memberList.get(memberList.size() -1).toString() + "\n");
-            }
+            output.append(memberList.get(memberList.size() -1).toString() + "\n");
             output.close();
             System.out.println("Person er arkiveret i databasen");
 
@@ -198,6 +199,32 @@ public class Registration
             JOptionPane.showMessageDialog(null, "the file doesn't exist");
         }
     }
+
+    public void opdaterFil()
+    {
+        try
+        {
+            PrintWriter writer = new PrintWriter("hello.txt");
+            writer.print("");
+            // other operations
+            writer.close();
+
+
+            // sletter info i dokument.
+
+            PrintStream output = new PrintStream(new FileOutputStream("members.txt", true));
+            output.append("\n");
+            output.append(memberList.toString());
+            output.append("\n");
+            output.close();
+            System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
+
+        } catch (IOException e)
+        {
+            System.out.println("error: " + e);
+            JOptionPane.showMessageDialog(null, "the file doesn't exist");
+        }
+    }*/
 }
 
 /*
