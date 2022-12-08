@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.awt.Desktop;
 
 public class Registration
 {
@@ -7,14 +8,11 @@ public class Registration
 
     //File fMembers = new File("members.txt");
     Scanner scan = new Scanner(System.in);
-<<<<<<< Updated upstream
+
     boolean sentinel = true;
-=======
     Desktop desktop = Desktop.getDesktop();
     Member member = new Member();
     Teams team = new Teams();
->>>>>>> Stashed changes
-
 
     public void registerMember(Member member) throws Exception
     {

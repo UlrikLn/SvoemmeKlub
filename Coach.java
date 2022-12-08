@@ -181,9 +181,9 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
                 if ( teams.getJuniorTeam().get(i).getId() == choice )
                 {
                     teams.getJuniorTeam().get(i).setTournament(tourney);
-                    System.out.println("");
+                    System.out.println();
                     teams.getJuniorTeam().get(i).setPlacement(place);
-                    System.out.println("");
+                    System.out.println();
                     teams.getJuniorTeam().get(i).setTournamentTime(ktid);
                     System.out.println("Tilføjet stævne, placering og tid til medlem: " + teams.getJuniorTeam().get(i).getFullName());
                 } else
