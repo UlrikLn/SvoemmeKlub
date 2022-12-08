@@ -49,6 +49,7 @@ public class Registration
             System.out.print("Alder: ");
             int age = scan.nextInt();
             System.out.print("Telefonnummer: ");
+            int mdma;
             int id = scan.nextInt();
             boolean membershipActive = true;
             int debt = 0;
