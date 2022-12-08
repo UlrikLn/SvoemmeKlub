@@ -27,9 +27,9 @@ public class Teams
 
     public void newTeams()
     {
-        juniorTeam.add(new Competitor(26188398, "Mand", "Ulrik", "Lehun", 15, 1600, "Competitor", true, 0, 13.70, "Crawl", "KBH", 3, 10.0));
-        juniorTeam.add(new Competitor(34563456, "kvind", "Ulrik", "jaja", 13, 1600, "Competitor", true, 0, 7.50, "Crawl", "KBH", 1, 5.67));
-        juniorTeam.add(new Competitor(26188398, "Mand", "Ulrik", "Lehun", 10, 1600, "Competitor", true, 0, 10.10, "Crawl", "KBH", 5, 10.0));
+        juniorTeam.add(new Competitor(26188398, "Mand", "Ulrik", "Lehun", 15, 1600, "Competitor", true, 0, 13, "Crawl", "KBH", 3, 10));
+        juniorTeam.add(new Competitor(34563456, "kvind", "Ulrik", "jaja", 13, 1600, "Competitor", true, 0, 7, "Crawl", "KBH", 1, 5));
+        juniorTeam.add(new Competitor(26188398, "Mand", "Ulrik", "Lehun", 10, 1600, "Competitor", true, 0, 10, "Crawl", "KBH", 5, 10));
     }
 
 

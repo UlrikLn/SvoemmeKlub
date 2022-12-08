@@ -13,7 +13,7 @@ public class Competitor extends Member
 
     Teams teams;
 
-    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, double trainingResult, String swimmingDisciplines, String tournament, int placement, double tournamentTime)
+    public Competitor(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt, int trainingResult, String swimmingDisciplines, String tournament, int placement, double tournamentTime)
     {
         super(id, gender, firstName, surname, age, subscription, memberType, membershipActive, debt);
         this.trainingResult = trainingResult;
@@ -30,7 +30,7 @@ public class Competitor extends Member
 
     // Setters
 
-    public void setTrainingResult(double trainingResult)
+    public void setTrainingResult(int trainingResult)
     {
         this.trainingResult = trainingResult;
     }
@@ -57,7 +57,7 @@ public class Competitor extends Member
 
     // Getters
 
-    public double getTrainingResult(double trainingResult)
+    public double getTrainingResult(int trainingResult)
     {
         return trainingResult;
     }

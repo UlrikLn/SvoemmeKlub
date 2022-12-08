@@ -14,6 +14,11 @@ public class Registration
     Member member;
     Teams team;
 
+    public Registration(Teams team)
+    {
+        this.team = team;
+    }
+
 
     public void registerMember(Member member) throws Exception
     {
@@ -186,7 +191,7 @@ public class Registration
                 {
                     Scanner sc = new Scanner(System.in);
                     System.out.println("Indtast det nye tid");
-                    Double prut = sc.nextDouble();
+                    int prut = sc.nextInt();
                     team.getJuniorTeam().get(i).setTournamentTime(prut);
                 }
             }

@@ -109,7 +109,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             System.out.print("Svømmerens telefonnummer: ");
             int choice = scan.nextInt();
             System.out.print("Svømmerens tid: ");
-            double time = scan.nextDouble();
+            int time = scan.nextInt();
             for ( int i = 0; i < teams.getJuniorTeam().size(); i++ )
             {
                 if ( teams.getJuniorTeam().get(i).getId() == choice )
@@ -140,7 +140,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             System.out.print("Svømmerens telefonnummer: ");
             int choice = scan.nextInt();
             System.out.print("Svømmerens tid: ");
-            double time = scan.nextDouble();
+            int time = scan.nextInt();
             for ( int i = 0; i < teams.getSeniorTeam().size(); i++ )
             {
                 if ( teams.getSeniorTeam().get(i).getId() == choice )

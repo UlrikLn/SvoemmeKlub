@@ -22,7 +22,7 @@ public class Menu
         Scanner scan = new Scanner(System.in);
         boolean sentinel = true;
         Desktop desktop = Desktop.getDesktop();
-        Registration registration = new Registration();
+        Registration registration = new Registration(team);
         File memberFile = new File("members.txt");
         registration.newMember();
         Cashier cashier = new Cashier(registration);
