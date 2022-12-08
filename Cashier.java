@@ -79,7 +79,7 @@ public class Cashier
             if(registration.memberList.get(i).getDebt() < 0)
             {
                 //Ved ikke om det virker, måske skal member erstattes med i??
-                //debtList.add((Member) registration.memberList.get(i));
+                debtList.add((Member) registration.memberList.get(i));
                 System.out.println("Medlem tilføjet til restance liste");
             }
             {
@@ -87,7 +87,6 @@ public class Cashier
             }
         }
     }
-
 
     public void debtListRemove()
     {

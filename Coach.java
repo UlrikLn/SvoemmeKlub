@@ -170,9 +170,9 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             Scanner scan = new Scanner(System.in);
             System.out.print("Svømmerens telefonnummer: ");
             int choice = scan.nextInt();
-            System.out.print("Stævne: ");
+            System.out.println("Stævne: ");
             String tourney = scan.nextLine();
-            System.out.print("Placering: ");
+            System.out.println("Placering: ");
             int place = scan.nextInt();
             System.out.print("Konkurrencetid: ");
             double ktid = scan.nextInt();
@@ -181,7 +181,9 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
                 if ( teams.getJuniorTeam().get(i).getId() == choice )
                 {
                     teams.getJuniorTeam().get(i).setTournament(tourney);
+                    System.out.println("");
                     teams.getJuniorTeam().get(i).setPlacement(place);
+                    System.out.println("");
                     teams.getJuniorTeam().get(i).setTournamentTime(ktid);
                     System.out.println("Tilføjet stævne, placering og tid til medlem: " + teams.getJuniorTeam().get(i).getFullName());
                 } else

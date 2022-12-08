@@ -52,6 +52,11 @@ public class Member
         return gender;
     }
 
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
     public String getFullName()
     {
         return firstName + " " + surname;

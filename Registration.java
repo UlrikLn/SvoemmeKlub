@@ -81,7 +81,7 @@ public class Registration
             int debt = 0;
             int subscription = 0;
             double trainingResult = 0;
-            String tournament = "Ingen"
+            String tournament = "Ingen";
             int placement = 0;
             double tournamentTime = 0;
 
@@ -118,7 +118,7 @@ public class Registration
     public void newMember()
     {
         memberList.add(new Member(26188398, "Mand", "Ulrik", "Lehun", 22, 1600, "Competitor", true, 0));
-        memberList.add(new Member(61474346, "Mand", "Jacob", "Gram", 23, 1600, "Competitor", true, 0));
+        memberList.add(new Member(61474346, "Mand", "Jacob", "Gram", 23, 1600, "Competitor", true, 200));
         memberList.add(new Member(85986098, "Kvinde", "Mette", "Frederiksen", 45, 500, "Passive", false, 0));
         memberList.add(new Member(28985049, "Mand", "Adam", "Aboudi", 14, 1000, "Competitor", true, 0));
         memberList.add(new Member(48484848, "Mand", "Klaus", "Jensen", 69, 1200, "Motionist", true, 0));
@@ -128,6 +128,11 @@ public class Registration
         memberList.add(new Member(26429712, "Mand", "Frederik", "Wessel", 24, 500, "Passive", false, 0));
         memberList.add(new Member(29282754, "Mand", "Christian", "Lorenzen", 29, 1600, "Competitor", true, 0));
         //memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02, "Crawl","Skjern",1));
+    }
+
+    public void sort()
+    {
+        Collections.sort(memberList, Comparator.comparing(Member::getFirstName));
     }
 
     public void seeList() throws Exception
@@ -178,12 +183,14 @@ public class Registration
             {
                 if (memberList.get(i).getId() == choice)
                 {
-                    memberList.remove(i);
+                    System.out.println("Indtast det nye navn");
+                    String prut = scan.nextLine();
+                    memberList.get(i).setName(prut);
                 }
             }
         }catch (Exception e)
         {
-            System.out.println("Ugyldigt input, prov igen med et nummer");
+            System.out.println("Ugyldigt input, prov igen");
             scan.next();
         }
     }

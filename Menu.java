@@ -53,10 +53,11 @@ public class Menu
                     registration.deleteMember(cashier);
                 } else if ( tal == 3 )
                 {
-                    System.out.println("Ikke færdigt gjordt endnu");
+                   registration.editMember();
                 } else if ( tal == 4 )
                 {
                     System.out.println("Printer Liste....");
+                    registration.sort();
                     registration.seeList();
                     //member.sleep();
                     //member.sleep();
