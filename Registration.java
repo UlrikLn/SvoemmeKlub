@@ -149,7 +149,7 @@ public class Registration
             member.whatSubcription(competitor);
             System.out.println(competitor);
         }
-        menu.menuLoop();
+        Menu.menuLoop();
     }
 
     public void newMember()
@@ -192,25 +192,22 @@ public class Registration
                 System.out.println("Indtast medlems id: ");
                 choice = scan.nextInt();
 
-                     for (int m = 0; m < memberList.size(); m++)
-                     {
-                         if ( memberList.get(m).getId() == choice )
-                         {
-                             notFinished = false;
-                             memberList.remove(m);
-
-                             for (int c = 0; c < cashier.debtList.size(); c++)
-                             {
-                                 if ( cashier.debtList.get(c).getId() == choice )
-                                 {
-                                     System.out.println("Husk at brugeren: " + choice + " har ubetalte regninger");
-                                     notFinished = false;
-                                 }
-                             }
-
-                             System.out.println("Bruger: " + choice + " er blevet slettet fra medlemslisten");
-                         }
-                     }
+                for (int m = 0; m < memberList.size(); m++)
+                {
+                    if ( memberList.get(m).getId() == choice )
+                    {
+                        for (int c = 0; c < cashier.debtList.size(); c++)
+                        {
+                            if ( cashier.debtList.get(c).getId() == choice )
+                            {
+                                System.out.println("Husk at brugeren: " + choice + " har ubetalte regninger");
+                            }
+                        }
+                        notFinished = false;
+                        memberList.remove(m);
+                        System.out.println("Bruger: " + choice + " er blevet slettet fra medlemslisten");
+                    }
+                }
             } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et nummer");

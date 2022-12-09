@@ -144,7 +144,7 @@ public class Member
 
     public void whatSubcription(Member member)
     {
-        if (membershipActive == true)
+        if ( membershipActive )
         {
             if (age < 18)
             {
@@ -162,7 +162,7 @@ public class Member
                 System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
             }
         }
-        else if (membershipActive == false)
+        else if ( !membershipActive )
         {
             subscription = 500;
             System.out.println("Passivt medlemsskab (pris: " + subscription + "kr.)");

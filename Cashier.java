@@ -18,9 +18,6 @@ public class Cashier
     public void cashierMenu()
     {
         debtList.add(new Member(4, "Kvinde", "Lotte", "Lehun", 22, 1600, "Competitor", true, 2000));
-
-        while (sentinel)
-        {
             System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
             System.out.println("----------------------------------------------------------");
             System.out.println("| 1 | Se Kontigent Priser");
@@ -65,21 +62,22 @@ public class Cashier
             }
 
 
-        }
     }
    public void deficitAddToList()
     {
         for (int i = 0; i < registration.memberList.size(); i++)
         {
-            if(registration.memberList.get(i).getDebt() < 0)
+            if(registration.memberList.get(i).getDebt() > 0)
             {
                 debtList.add(registration.memberList.get(i));
                 System.out.println("Medlem tilføjet til restance liste");
             }
+            else
             {
-                System.out.println("Alle medlemmer har betalt, derfor ingen tilføjet)");
+                System.out.println("Medlem: " + " [ " + i + " ] " + " har betalt");
             }
         }
+        cashierMenu();
     }
 
     public void debtListRemove()

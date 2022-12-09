@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Teams
 {
-    private ArrayList<Competitor> juniorTeam = new ArrayList<>();
-    private ArrayList<Competitor> seniorTeam = new ArrayList<>();
+    private final ArrayList<Competitor> juniorTeam = new ArrayList<>();
+    private final ArrayList<Competitor> seniorTeam = new ArrayList<>();
 
     public void addJuniorCompetitor(Competitor competitor)
     {
