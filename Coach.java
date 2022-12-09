@@ -4,15 +4,6 @@ import java.util.*;
 
 public class Coach
 {
-/*Indsætte scanner og alle valgmulighederne træneren skal kunne  ()
-Et juniorhold (u. 18) og seniorhold (18+)
-For hver svømmedisciplin:
-    Liste over træningsresultat & dato
-    Liste over konkurrencec-aktive: registreres stævne, placering og tid
-Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin konkurrence/træning.
- */
-
-
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member;
@@ -102,8 +93,6 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
         }
     }
-
-
             public void assignTrainingResultsJunior()
     {
         try
@@ -132,9 +121,6 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             scan.next();
         }
     }
-
-
-
     public void assignTrainingResultsSenior()
     {
         try
@@ -164,8 +150,6 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
         }
 
     }
-
-
     public void assignTournamentJunior()
     {
         boolean sentinel = true;
@@ -204,9 +188,6 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
             }
 
     }
-
-
-
     public void assignTournamentSenior()
     {
         try
@@ -242,22 +223,5 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
         }
 
     }
-
-  /*
-  //Disse metoder kunne vi ikke nå at få til at virke...
-  public void udtagSvømmereTilKonkurrence(Hold hold) {
-    int minimumsKrav = 10; //hard coded adgangskrav til vores egen hjemmelavede konkurrence.
-    for (int i = 0; i < hold.getJuniorKonkurrencesvømmere().size(); i++) {
-      if (hold.getJuniorKonkurrencesvømmere().get(i).getTræningsResultat() < minimumsKrav) {
-        hold.getKonkurrenceDeltagelse().add(hold.getJuniorKonkurrencesvømmere().get(i));
-      }
-    }
-  }
-  //
-  public void udskrivUdvalgteKonkurrencedeltagere(Hold hold) {
-    for (int i = 0; i < hold.getKonkurrenceDeltagelse().size(); i++) {
-      System.out.println(hold.getKonkurrenceDeltagelse().get(i));
-    }
-  } */
 
 }

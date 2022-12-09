@@ -1,14 +1,9 @@
-import java.text.ParseException;
 import java.util.*;
 import java.io.*;
 import java.awt.Desktop;
 
 public class Menu
 {
-    // Vi skal lave en ny Class der hedder Delfinen hvor vores main() skal være
-    // så vi laver en metode herinde, der bare hedder start() som så kører vore "menu" while loop.
-    // og så inde i vores main() der kalder laver vi en Menu menu = new Menu og kalder menu.start().
-
     public static void main(String[] args)
     {
         menuLoop();
@@ -71,7 +66,6 @@ public class Menu
                         desktop.open(memberFile);
                         System.out.println("Dokumentet åbner");
                         System.out.println("----------------------------------------------------------");
-                        //member.sleep();
                     } catch (Exception e)
                     {
                         System.out.println("**********************Error**********************");

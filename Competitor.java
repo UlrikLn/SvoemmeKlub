@@ -23,9 +23,6 @@ public class Competitor extends Member
         this.tournamentTime = tournamentTime;
 
 
-
-
-
     }
 
     // Setters
@@ -83,7 +80,6 @@ public class Competitor extends Member
     }
 
 
-    // Override
     public String toString()
     {
         if ( getMembershipActive() )

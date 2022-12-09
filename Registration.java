@@ -1,16 +1,11 @@
-import java.io.*;
 import java.util.*;
-import java.awt.Desktop;
 
 public class Registration
 {
     public ArrayList<Member> memberList = new ArrayList<>();
     Menu menu;
-    //File fMembers = new File("members.txt");
     Scanner scan = new Scanner(System.in);
     boolean sentinel = true;
-    Desktop desktop = Desktop.getDesktop();
-    Member member;
     Teams team;
     String gender = "humhum";
     int age = -100;
@@ -68,15 +63,13 @@ public class Registration
         sentinel = true;
     }
 
-
-    public void registerMember(Member member) throws Exception
+    public void registerMember(Member member)
     {
 
         System.out.println("Opret det nye medlem herunder: ");
         System.out.print("Skal det nye medlem registreres som konkurrencesvømmer, 'ja' eller 'nej': ");
         String memberType = scan.nextLine();
 
-        //Motionist
         if ( memberType.equals("nej") )
         {
             System.out.print("Fornavn: ");
@@ -104,14 +97,14 @@ public class Registration
                 subscription = 1200;
                 System.out.println("Pensionist medlemsskab (pris: " + subscription + "kr.)");
             }
-            //fileWrite();
             System.out.println();
 
 
             memberList.add(exerciser);
             System.out.print(exerciser);
+            member.whatSubcription(exerciser);
 
-            //Konkurrencesvømmer
+
         } else if ( memberType.equals("ja") )
         {
             System.out.print("Fornavn: ");
@@ -171,7 +164,6 @@ public class Registration
         memberList.add(new Member(68752957, "Mand", "Ulrik", "Lehun", 22, 1600, "Passive", false, 0));
         memberList.add(new Member(26429712, "Mand", "Frederik", "Wessel", 24, 500, "Passive", false, 0));
         memberList.add(new Member(29282754, "Mand", "Christian", "Lorenzen", 29, 1600, "Competitor", true, 0));
-        //memberList.add(new Competitor(22975312, "Kvinde", "Morten", "Olsen", 64, 1200, "Competitor", true, 0, 12.02, "Crawl","Skjern",1));
     }
 
     public void sort()
@@ -199,7 +191,6 @@ public class Registration
             {
                 System.out.println("Indtast medlems id: ");
                 choice = scan.nextInt();
-                boolean DebtList = true;
 
                      for (int m = 0; m < memberList.size(); m++)
                      {
@@ -277,9 +268,9 @@ public class Registration
                             int time = sc.nextInt();
                             System.out.println("Indtast placering");
                             int placement = sc.nextInt();
-                            team.getJuniorTeam().get(i).setTournamentTime(time);
-                            team.getJuniorTeam().get(i).setTournament(meet);
-                            team.getJuniorTeam().get(i).setPlacement(placement);
+                            team.getSeniorTeam().get(i).setTournamentTime(time);
+                            team.getSeniorTeam().get(i).setTournament(meet);
+                            team.getSeniorTeam().get(i).setPlacement(placement);
                         }
                     }
 
@@ -335,54 +326,5 @@ public class Registration
         }
     }
 
-    /*
-    public void opdaterFil()
-    {
-        try
-        {
-            PrintWriter writer = new PrintWriter("hello.txt");
-            writer.print("");
-            // other operations
-            writer.close();
 
-
-            // sletter info i dokument.
-
-            PrintStream output = new PrintStream(new FileOutputStream("members.txt", true));
-            output.append("\n");
-            output.append(memberList.toString());
-            output.append("\n");
-            output.close();
-            System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
-
-        } catch (IOException e)
-        {
-            System.out.println("error: " + e);
-            JOptionPane.showMessageDialog(null, "the file doesn't exist");
-        }
-    }*/
 }
-
-/*
-FileWriter fw = new FileWriter("members.txt", true);
-         BufferedWriter bw = new BufferedWriter(fw);
-         PrintWriter out = new PrintWriter(bw);
-         out.append(member.toString());
-         System.out.println("Person er arkiveret i databasen");
-
-PrintStream output = new PrintStream(new FileOutputStream(fMembers, true));
-         output.append("\n");
-         output.append(member.toString());
-         output.append("\n");
-         output.close();
-         System.out.println("\n Nyt medlem er oprettet, se medlemmer under filen members.txt \n");
-
-FileWriter fw = new FileWriter("members.txt", true);
-            Writer output = new BufferedWriter(fw);
-            for (int i = 0; i<memberList.size(); i++)
-            {
-                output.write(memberList.get(i).toString() + "\n");
-            }
-            output.close();
-            System.out.println("Person er arkiveret i databasen");
- */

@@ -3,23 +3,17 @@ import java.util.function.Predicate;
 
 public class Cashier
 {
-    // Liste alle priser (Done)
-    // hvem der er passive ()
-    // Hvem der har betal og ikke betalt ()
-    // Gøre folk passive (Done)
-    // Huske at når vi sletter fra MemberList skal den også slette tilsvarende fra debtList
+
     public  ArrayList<Member> debtList = new ArrayList<>();
     boolean sentinel = true;
     Scanner scan = new Scanner(System.in);
     Member member;
     Registration registration;
     Menu menu;
-
     public Cashier(Registration registration)
     {
         this.registration = registration;
     }
-
 
     public void cashierMenu()
     {
@@ -41,9 +35,7 @@ public class Cashier
                 if ( tal == 1 )
                 {
                     System.out.println("Printer Kontigent Priser....");
-                    //member.sleep();
                     subcribtionPrices();
-                    //member.sleep();
 
                 } else if ( tal == 2 )
                 {
@@ -52,8 +44,6 @@ public class Cashier
                 } else if ( tal == 3 )
                 {
                     System.out.println("Printer Restance Liste....");
-                    //member.sleep();
-                    //member.sleep();
                     seeDeficit();
                 } else if ( tal == 4 )
                 {
@@ -77,8 +67,6 @@ public class Cashier
 
         }
     }
-
-
    public void deficitAddToList()
     {
         for (int i = 0; i < registration.memberList.size(); i++)

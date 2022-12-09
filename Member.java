@@ -10,17 +10,13 @@ public class Member
     private String surname = "Dillermand";
     private int age = -99;
     private int subscription = -99;
-    // medlemmet kan være 3 forskellige membertypes: Competitor, Excerciser og Passiv
     private String memberType = "Prut";
-    // Hvis medlemmets membership status er false, er medlemmet en Passiv memeberType
     private boolean membershipActive = true;
     private int debt = 0;
 
     public Member()
     {
     }
-
-    // Constructors
     public Member(int id, String gender, String firstName, String surname, int age, int subscription, String memberType, boolean membershipActive, int debt)
     {
         this.id = id;
@@ -33,10 +29,6 @@ public class Member
         this.membershipActive = membershipActive;
         this.debt = debt;
     }
-
-
-    // Getters
-
     public int getId()
     {
         return id;
@@ -81,8 +73,6 @@ public class Member
     {
         return debt;
     }
-
-    // Setters
 
     public void setId(int id)
     {
@@ -154,7 +144,7 @@ public class Member
 
     public void whatSubcription(Member member)
     {
-        /*if (membershipActive == true)
+        if (membershipActive == true)
         {
             if (age < 18)
             {
@@ -176,7 +166,7 @@ public class Member
         {
             subscription = 500;
             System.out.println("Passivt medlemsskab (pris: " + subscription + "kr.)");
-        }*/
+        }
 
     }
 
