@@ -43,13 +43,11 @@ public class Menu
                 int tal = scan.nextInt();
                 if ( tal == 1 )
                 {
-                    sentinel = false;
                     registration.registerMember(member);
 
                 } else if ( tal == 2 )
                 {
                     registration.deleteMember(cashier);
-                    sentinel = false;
                 } else if ( tal == 3 )
                 {
                    registration.editMember(team);
@@ -76,12 +74,10 @@ public class Menu
                 {
                     System.out.println("Åbner kasserer");
                     cashier.cashierMenu();
-                    sentinel = false;
                 } else if ( tal == 7 )
                 {
                     System.out.println("Åbner træner");
                     coach.coachMenu();
-                    sentinel = false;
                 } else if ( tal == 0 )
                 {
                     System.out.println("Lukker programmet");

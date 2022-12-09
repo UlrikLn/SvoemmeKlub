@@ -17,7 +17,8 @@ public class Cashier
 
     public void cashierMenu()
     {
-        debtList.add(new Member(4, "Kvinde", "Lotte", "Lehun", 22, 1600, "Competitor", true, 2000));
+        while ( sentinel )
+        {
             System.out.println("Vælg et tal fra 0-9 for at åbne funktioner:");
             System.out.println("----------------------------------------------------------");
             System.out.println("| 1 | Se Kontigent Priser");
@@ -42,26 +43,24 @@ public class Cashier
                 {
                     System.out.println("Printer Restance Liste....");
                     seeDeficit();
+
                 } else if ( tal == 4 )
                 {
-
+                    debtListRemove();
                 } else if ( tal == 0 )
                 {
                     System.out.println("Går Tilbage...");
                     Menu.menuLoop();
                     sentinel = false;
-
                 } else
                 {
-                    System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
+                    System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 4");
                 }
             } catch (Exception e)
             {
                 System.out.println("Der opsted en fejl prøver igen");
-                scan.next();
             }
-
-
+        }
     }
    public void deficitAddToList()
     {
@@ -70,14 +69,13 @@ public class Cashier
             if(registration.memberList.get(i).getDebt() > 0)
             {
                 debtList.add(registration.memberList.get(i));
-                System.out.println("Medlem tilføjet til restance liste");
+                System.out.println("Medlem " + " [ " + i + " ] " + "tilføjet til restance liste");
             }
             else
             {
                 System.out.println("Medlem: " + " [ " + i + " ] " + " har betalt");
             }
         }
-        cashierMenu();
     }
 
     public void debtListRemove()

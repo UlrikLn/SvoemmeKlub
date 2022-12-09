@@ -51,7 +51,7 @@ public class Registration
         {
             System.out.print("Telefonnummer: ");
             id = scan.nextInt();
-            if (id >= 30000000 && id <= 99999999)
+            if (id >= 10000000 && id <= 99999999)
             {
                 sentinel = false;
             }

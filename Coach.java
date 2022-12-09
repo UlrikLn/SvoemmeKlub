@@ -37,27 +37,23 @@ public class Coach
                 if ( tal == 1 )
                 {
                     assignTrainingResultsJunior();
-                    sentinel = false;
                     System.out.println("Åbner 1");
                     System.out.println("Indtast Trænings Resultater for Junior medlem: ");
                 } else if ( tal == 2 )
                 {
                     assignTrainingResultsSenior();
-                    sentinel = false;
                     System.out.println("Åbner 2");
                     System.out.println("Indtast Trænings Resultater for Senior medlem: ");
 
                 } else if ( tal == 3 )
                 {
                     assignTournamentJunior();
-                    sentinel = false;
                     System.out.println("Åbner 3");
                     System.out.println("Indtast Konkurrence Resultater for Junior medlemmer");
 
                 } else if ( tal == 4 )
                 {
                     assignTournamentSenior();
-                    sentinel = false;
                     System.out.println("Åbner 4");
                     System.out.println("Indtast Konkurrence Resultater for Senior medlemmer");
 
