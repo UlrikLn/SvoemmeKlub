@@ -84,10 +84,10 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
                 } else if ( tal == 0 )
                 {
-                    member.sleep();
+                    System.out.println("Går Tilbage...");
                     Menu.menuLoop();
                     sentinel = false;
-                    System.out.println("Går Tilbage...");
+
                 } else
                 {
                     System.out.println("Ugyldigt tal, prov igen med et tal fra 0 - 9");

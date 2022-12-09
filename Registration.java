@@ -5,18 +5,67 @@ import java.awt.Desktop;
 public class Registration
 {
     public ArrayList<Member> memberList = new ArrayList<>();
-
+    Menu menu;
     //File fMembers = new File("members.txt");
     Scanner scan = new Scanner(System.in);
-
     boolean sentinel = true;
     Desktop desktop = Desktop.getDesktop();
     Member member;
     Teams team;
-
+    String gender = "humhum";
+    int age = -100;
+    int id = -99;
     public Registration(Teams team)
     {
         this.team = team;
+    }
+
+    public void filterInfo()
+    {
+        while (sentinel)
+        {
+            System.out.print("Køn: (mand/kvinde)");
+            gender = scan.nextLine();
+            if (gender.equals ("mand") || gender.equals("kvinde"))
+            {
+                sentinel = false;
+            }
+            else
+            {
+                System.out.print("Forkert input, skriv enten [mand] eller [kvinde]");
+            }
+        }
+        sentinel = true;
+
+        while (sentinel)
+        {
+            System.out.print("Alder: ");
+            age = scan.nextInt();
+            if (age >= 0 && age <= 100)
+            {
+                sentinel = false;
+            }
+            else
+            {
+                System.out.print("Forkert input, skriv et tal mellem 0 og 100");
+            }
+        }
+        sentinel = true;
+
+        while (sentinel)
+        {
+            System.out.print("Telefonnummer: ");
+            id = scan.nextInt();
+            if (id >= 30000000 && id <= 99999999)
+            {
+                sentinel = false;
+            }
+            else
+            {
+                System.out.print("Forkert input, skriv et tal mellem 30000000 og 99999999");
+            }
+        }
+        sentinel = true;
     }
 
 
@@ -34,12 +83,7 @@ public class Registration
             String firstName = scan.nextLine();
             System.out.print("Efternavn: ");
             String surname = scan.nextLine();
-            System.out.print("Køn ");
-            String gender = scan.nextLine();
-            System.out.print("Alder: ");
-            int age = scan.nextInt();
-            System.out.print("Telefonnummer: ");
-            int id = scan.nextInt();
+            filterInfo();
             boolean membershipActive = true;
             int debt = 0;
             int subscription = 0;
@@ -74,12 +118,7 @@ public class Registration
             String firstName = scan.nextLine();
             System.out.print("Efternavn: ");
             String surname = scan.nextLine();
-            System.out.print("Køn: ");
-            String gender = scan.nextLine();
-            System.out.print("Alder: ");
-            int age = scan.nextInt();
-            System.out.print("Telefonnummer: ");
-            int id = scan.nextInt();
+            filterInfo();
             Teams teams = new Teams();
             String swimmingDisciplines = teams.selectDiscipline();
             boolean membershipActive = true;
@@ -117,7 +156,7 @@ public class Registration
             member.whatSubcription(competitor);
             System.out.println(competitor);
         }
-
+        menu.menuLoop();
     }
 
     public void newMember()
@@ -150,32 +189,48 @@ public class Registration
 
     }
 
-
     public void deleteMember(Cashier cashier)
     {
-        try
+        boolean notFinished = true;
+        int choice;
+        while (notFinished)
         {
-            System.out.println("Indtast medlems id: ");
-            int choice = scan.nextInt();
+            try
+            {
+                System.out.println("Indtast medlems id: ");
+                choice = scan.nextInt();
 
-            for (int i = 0; i < memberList.size(); i++)
-            {
-                if (memberList.get(i).getId() == choice)
+                for ( int i = 0; i < cashier.debtList.size(); i++ )
                 {
-                    memberList.remove(i);
+                    if ( cashier.debtList.get(i).getId() == choice )
+                    {
+                        cashier.debtList.remove(i);
+                        System.out.println("Bruger: " + choice + " er på restancelisten og kan derfor ikke slettes");
+                    }
+                    else
+                    {
+                        System.out.println("Personen findes ikke på restancelisten");
+                    }
                 }
-            }
-            for (int i = 0; i < cashier.debtList.size(); i++)
+
+                    for ( int i = 0; i < memberList.size(); i++ )
+                    {
+                        if ( memberList.get(i).getId() == choice )
+                        {
+                            memberList.remove(i);
+                            System.out.println("Bruger: " + choice + " er blevet slettet fra medlemslisten");
+                            notFinished = false;
+                        }
+                        else
+                        {
+                            System.out.println("Ugydligt medlems-/telefonnummer, prøv igen");
+                        }
+                    }
+            } catch (Exception e)
             {
-                if (cashier.debtList.get(i).getId() == choice)
-                {
-                    cashier.debtList.remove(i);
-                }
+                System.out.println("Ugyldigt input, prov igen med et nummer");
+                scan.next();
             }
-        }catch (Exception e)
-        {
-            System.out.println("Ugyldigt input, prov igen med et nummer");
-            scan.next();
         }
     }
 
@@ -289,24 +344,7 @@ public class Registration
         }
     }
 
-    /*public void fileWrite() throws Exception
-    {
-        try
-        {
-            FileWriter fw = new FileWriter("members.txt", true);
-            Writer output = new BufferedWriter(fw);
-
-            output.append(memberList.get(memberList.size() -1).toString() + "\n");
-            output.close();
-            System.out.println("Person er arkiveret i databasen");
-
-        } catch (IOException e)
-        {
-            System.out.println("error: " + e);
-            JOptionPane.showMessageDialog(null, "the file doesn't exist");
-        }
-    }
-
+    /*
     public void opdaterFil()
     {
         try
@@ -357,19 +395,3 @@ FileWriter fw = new FileWriter("members.txt", true);
             output.close();
             System.out.println("Person er arkiveret i databasen");
  */
-
-
-
-
-
-/*
- public void showMembers() throws FileNotFoundException
-   {
-      Scanner fileReader = new Scanner(fileAlleMedlemmer);
-      while (fileReader.hasNext())
-         System.out.println(fileReader.nextLine());
-   }
-
-   private ArrayList<Member> members = new ArrayList<>();
-   private fileScanner = new filHåndtering
-   */
