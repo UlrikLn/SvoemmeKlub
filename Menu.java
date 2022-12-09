@@ -57,14 +57,13 @@ public class Menu
                     sentinel = false;
                 } else if ( tal == 3 )
                 {
-                   registration.editMember();
+                   registration.editMember(team);
                 } else if ( tal == 4 )
                 {
                     System.out.println("Printer Liste....");
                     registration.sort();
                     registration.seeList();
-                    //member.sleep();
-                    //member.sleep();
+
                 } else if ( tal == 5 )
                 {
                     try
@@ -96,12 +95,10 @@ public class Menu
                 } else
                 {
                     System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                    //member.sleep();
                 }
             } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
-                //member.sleep();
                 scan.next();
             }
 

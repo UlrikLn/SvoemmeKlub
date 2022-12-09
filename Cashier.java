@@ -70,7 +70,7 @@ public class Cashier
                 }
             } catch (Exception e)
             {
-                System.out.println("Ugyldigt input, prov igen med et tal fra 0 - 9");
+                System.out.println("Der opsted en fejl prøver igen");
                 scan.next();
             }
 
@@ -85,7 +85,6 @@ public class Cashier
         {
             if(registration.memberList.get(i).getDebt() < 0)
             {
-                //Ved ikke om det virker, måske skal member erstattes med i??
                 debtList.add(registration.memberList.get(i));
                 System.out.println("Medlem tilføjet til restance liste");
             }

@@ -90,7 +90,7 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
                 } else
                 {
-                    System.out.println("Ugyldigt tal, prov igen med et tal fra 0 - 9");
+                    System.out.println("Ugyldigt tal, prov igen med et tal fra 0 - 6");
                     member.sleep();
                 }
             } catch (Exception e)
@@ -168,39 +168,40 @@ Oversigt, der kan vise klubbens top 5 svømmere inden for hver svømmedisciplin 
 
     public void assignTournamentJunior()
     {
-        try
-        {
-            Scanner scan = new Scanner(System.in);
-            System.out.print("Svømmerens telefonnummer: ");
-            int choice = scan.nextInt();
-            System.out.println("Stævne: ");
-            String tourney = scan.next();
-            System.out.println("Placering: ");
-            int place = scan.nextInt();
-            System.out.print("Konkurrencetid: ");
-            int ktid = scan.nextInt();
-            for ( int i = 0; i < teams.getJuniorTeam().size(); i++ )
+        boolean sentinel = true;
+            try
             {
-                if ( teams.getJuniorTeam().get(i).getId() == choice )
+                Scanner scan = new Scanner(System.in);
+                System.out.print("Svømmerens telefonnummer: ");
+                int choice = scan.nextInt();
+                System.out.println("Stævne: ");
+                String tourney = scan.next();
+                System.out.println("Placering: ");
+                int place = scan.nextInt();
+                System.out.print("Konkurrencetid: ");
+                int ktid = scan.nextInt();
+                for ( int i = 0; i < teams.getJuniorTeam().size(); i++ )
                 {
-                    teams.getJuniorTeam().get(i).setTournament(tourney);
-                    System.out.println();
-                    teams.getJuniorTeam().get(i).setPlacement(place);
-                    System.out.println();
-                    teams.getJuniorTeam().get(i).setTournamentTime(ktid);
-                    System.out.println("Tilføjet stævne, placering og tid til medlem: " + teams.getJuniorTeam().get(i).getFullName());
-                } else
-                {
-                    System.out.println("Intet medlem fundet med id'et indtastet");
+                    if ( teams.getJuniorTeam().get(i).getId() == choice )
+                    {
+                        teams.getJuniorTeam().get(i).setTournament(tourney);
+                        System.out.println();
+                        teams.getJuniorTeam().get(i).setPlacement(place);
+                        System.out.println();
+                        teams.getJuniorTeam().get(i).setTournamentTime(ktid);
+                        System.out.println("Tilføjet stævne, placering og tid til medlem: " + teams.getJuniorTeam().get(i).getFullName());
+                        sentinel = false;
+                    } else
+                    {
+                        System.out.println("Intet medlem fundet med id'et indtastet");
+                    }
                 }
+            } catch (Exception e)
+            {
+                System.out.println("Ugyldigt input, prov igen med et nummer");
+                member.sleep();
+                scan.next();
             }
-        }
-        catch (Exception e)
-        {
-            System.out.println("Ugyldigt input, prov igen med et nummer");
-            member.sleep();
-            scan.next();
-        }
 
     }
 

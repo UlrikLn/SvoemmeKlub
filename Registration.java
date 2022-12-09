@@ -199,33 +199,27 @@ public class Registration
             {
                 System.out.println("Indtast medlems id: ");
                 choice = scan.nextInt();
+                boolean DebtList = true;
 
-                for ( int i = 0; i < cashier.debtList.size(); i++ )
-                {
-                    if ( cashier.debtList.get(i).getId() == choice )
-                    {
-                        cashier.debtList.remove(i);
-                        System.out.println("Bruger: " + choice + " er på restancelisten og kan derfor ikke slettes");
-                    }
-                    else
-                    {
-                        System.out.println("Personen findes ikke på restancelisten");
-                    }
-                }
+                     for (int m = 0; m < memberList.size(); m++)
+                     {
+                         if ( memberList.get(m).getId() == choice )
+                         {
+                             notFinished = false;
+                             memberList.remove(m);
 
-                    for ( int i = 0; i < memberList.size(); i++ )
-                    {
-                        if ( memberList.get(i).getId() == choice )
-                        {
-                            memberList.remove(i);
-                            System.out.println("Bruger: " + choice + " er blevet slettet fra medlemslisten");
-                            notFinished = false;
-                        }
-                        else
-                        {
-                            System.out.println("Ugydligt medlems-/telefonnummer, prøv igen");
-                        }
-                    }
+                             for (int c = 0; c < cashier.debtList.size(); c++)
+                             {
+                                 if ( cashier.debtList.get(c).getId() == choice )
+                                 {
+                                     System.out.println("Husk at brugeren: " + choice + " har ubetalte regninger");
+                                     notFinished = false;
+                                 }
+                             }
+
+                             System.out.println("Bruger: " + choice + " er blevet slettet fra medlemslisten");
+                         }
+                     }
             } catch (Exception e)
             {
                 System.out.println("Ugyldigt input, prov igen med et nummer");
@@ -234,7 +228,7 @@ public class Registration
         }
     }
 
-    public void editMember()
+    public void editMember(Teams team)
     {
         while (sentinel)
         {
@@ -268,7 +262,6 @@ public class Registration
                             team.getJuniorTeam().get(i).setTournamentTime(time);
                             team.getJuniorTeam().get(i).setTournament(meet);
                             team.getJuniorTeam().get(i).setPlacement(placement);
-                            break;
                         }
                     }
                 } else if ( tal == 2 )
@@ -287,7 +280,6 @@ public class Registration
                             team.getJuniorTeam().get(i).setTournamentTime(time);
                             team.getJuniorTeam().get(i).setTournament(meet);
                             team.getJuniorTeam().get(i).setPlacement(placement);
-                            break;
                         }
                     }
 
@@ -301,7 +293,6 @@ public class Registration
                             System.out.println("Indtast restance: ");
                             int debt = sc.nextInt();
                             memberList.get(i).setDebt(debt);
-                            break;
                         }
                     }
                 } else if ( tal == 4 ) {
@@ -336,7 +327,7 @@ public class Registration
                 }
             } catch (Exception e)
             {
-                System.out.println("Fejl");
+                System.out.println("Fejl: " + e);
                 scan.next();
             }
 
