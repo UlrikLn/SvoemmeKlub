@@ -168,7 +168,8 @@ public class Registration
 
     public void sort()
     {
-        Collections.sort(memberList, Comparator.comparing(Member::getMemberType));
+
+        Collections.sort(memberList, Comparator.comparingDouble(Member::get));
     }
 
     public void seeList()
